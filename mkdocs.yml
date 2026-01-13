@@ -1,6 +1,6 @@
 site_name: HomeR Docs
-site_url: https://linzhanguca.github.io/projects/homer/docs
-repo_url: https://github.com/linzhanguca/homer_docs/
+site_url: https://linzhanguca.github.io/homer_docs/
+repo_url: https://github.com/linzhanguca/homer_docs
 edit_uri: edit/main/docs/
 
 theme:
