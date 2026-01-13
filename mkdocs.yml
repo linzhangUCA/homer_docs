@@ -1,0 +1,60 @@
+site_name: HomeR Docs
+site_url: https://linzhanguca.github.io/projects/homer/docs
+repo_url: https://github.com/linzhanguca/homer_docs/
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    # Light Mode
+    - scheme: default
+      primary: deep purple
+      accent: grey
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark Mode
+    - scheme: slate
+      primary: blue grey
+      accent: grey
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs        # Top navigation bar
+    - navigation.sections    # Sidebar grouping
+    - content.code.copy      # Copy button on code blocks
+    - content.tooltips
+    - navigation.top         # "Back to top" button
+
+# Extensions to make your docs powerful
+markdown_extensions:
+  - admonition                # Info/Warning boxes
+  - abbr                      # Abbreviations
+  - attr_list                 # <--- CRITICAL: Allows { width=300 } for images
+  - md_in_html
+  - pymdownx.details          # Collapsible sections
+  - pymdownx.superfences:     # Mermaid Diagrams
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:       # Code highlighting
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:           # Icons like :smile:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.arithmatex:      # Math/LaTeX support
+      generic: true
+
+# MathJax setup for rendering equations
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Custom CSS for your Grid Cards
+extra_css:
+  - stylesheets/extra.css

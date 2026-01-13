@@ -1,0 +1,35 @@
+/* docs/stylesheets/extra.css */
+:root {
+  /* This changes the header bar */
+  --md-primary-fg-color:        #582c83;
+  --md-primary-fg-color--light: #a897c0;
+  --md-primary-fg-color--dark:  #3b245e;
+
+  /* This changes links, buttons, and loading bars */
+  --md-accent-fg-color:         #7C878E;
+  --md-accent-fg-color--transparent: rgba(124, 135, 142, 0.1);
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cards > ul, .cards > ol {
+  display: contents; /* Strip list styling */
+}
+
+.cards li {
+  list-style: none;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cards li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: var(--md-default-bg-color--light);
+}
