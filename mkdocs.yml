@@ -8,15 +8,15 @@ theme:
   palette:
     # Light Mode
     - scheme: default
-      primary: deep purple
-      accent: grey
+      primary: purple
+      accent: amber
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     # Dark Mode
     - scheme: slate
       primary: blue grey
-      accent: grey
+      accent: deep purple
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
