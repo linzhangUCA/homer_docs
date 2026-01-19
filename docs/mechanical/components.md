@@ -25,7 +25,17 @@
 | [RPLidar A1M8](https://www.slamtec.com/en/Lidar/A1) | 1 | 12m 360$\deg$ ranging @ 5.5Hz |
 | [MicroUSB cable](https://a.co/d/4cDLAZ5) | 2 | USB2.0, 480Mbps data transfer speed |
 | [USB C charging cable](https://a.co/d/bu78AS5) | 1 | 60W power delivery |
+| [2-pin JST XH 2.54 cable](https://a.co/d/4c0eC7V) | 1 | 60W power delivery |
 
 ## 3D-Print Recipe
+
+You'll need to print out following parts to set up the frame for HomeR.
+
+- 1x [base](https://github.com/linzhangUCA/homer_me/blob/main/3dprints/Base.step)
+- 1x [second floor](https://github.com/linzhangUCA/homer_me/blob/main/3dprints/Roof.step)
+- 1x [caster wheel](https://github.com/linzhangUCA/homer_me/blob/main/3dprints/RollerMod.step)
+- 2x [motor holder](https://github.com/linzhangUCA/homer_me/blob/main/3dprints/MotorHolder.step)
+
+> The mechanical designs are hosted on Github: [https://github.com/linzhangUCA/homer_me](https://github.com/linzhangUCA/homer_me/)
 
 ## Tools
