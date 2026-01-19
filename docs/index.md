@@ -5,6 +5,8 @@ HomeR is designed for educational purposes with emphases on **[ROS](https://ros.
 It features a differential drive system, runs on an **Raspberry Pi SBC and a Raspberry Pi Pico microcontroller**.
 All the components are easy to access or 3d printable.
 
+![homer_portrait](assets/images/homer_portrait.png)
+
 ## Key Specifications
 
 | Features | Details |
