@@ -25,7 +25,11 @@
 | [RPLidar A1M8](https://www.slamtec.com/en/Lidar/A1) | 1 | 12m 360$\deg$ ranging @ 5.5Hz |
 | [MicroUSB cable](https://a.co/d/4cDLAZ5) | 2 | USB2.0, 480Mbps data transfer speed |
 | [USB C charging cable](https://a.co/d/bu78AS5) | 1 | 60W power delivery |
-| [2-pin JST XH 2.54 cable](https://a.co/d/4c0eC7V) | 1 | 60W power delivery |
+| [2-pin JST XH 2.54 cable](https://a.co/d/4c0eC7V) | 1 | Male header |
+| [2-pin male JST XH 2.54 cable](https://a.co/d/4c0eC7V) | 1 |  |
+| [2-pin male JST XH 2.54 connector](https://a.co/d/102cvu1) | 1 |  |
+| [JST RCY male cable](https://a.co/d/1qKn7NN) | 1 |  |
+| [JST RCY female cable](https://a.co/d/1qKn7NN) | 1 |  |
 
 ## 3D-Print Recipe
 
@@ -36,6 +40,20 @@ You'll need to print out following parts to set up the frame for HomeR.
 - 1x [caster wheel](https://github.com/linzhangUCA/homer_me/blob/main/3dprints/RollerMod.step)
 - 2x [motor holder](https://github.com/linzhangUCA/homer_me/blob/main/3dprints/MotorHolder.step)
 
-> The mechanical designs are hosted on Github: [https://github.com/linzhangUCA/homer_me](https://github.com/linzhangUCA/homer_me/)
+!!! tip "Mechanical designs"
+
+    - You can add [`3mf`](https://github.com/linzhangUCA/homer_me/blob/main/3dprints/orcaslicer_project/HomeR-PLA.3mf) profile in OrcaSlicer.
+    - The FreeCAD designs are availbale on Github: [https://github.com/linzhangUCA/homer_me](https://github.com/linzhangUCA/homer_me/)
 
 ## Tools
+
+Following tools are handy.
+
+- Safety goggles
+- Philips (PH1) screwdriver
+- (2mm) Allen wrench key
+- Needle nose pliers
+- Tweezers
+- Wire cutter and stripper
+- Crimping tool
+- Li-ion battery charger
