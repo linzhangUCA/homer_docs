@@ -3,9 +3,7 @@
 **Home(plate)R(obot)** is an open-source mobile robot platform.
 HomeR is designed for educational purposes with emphases on autonomous **SLAM** and **navigation**.
 It features a differential drive mobile base regulated by a **Raspberry Pi Pico** microcontroller.
-A **Raspberry Pi** SBC plays high-level decision making.
-And the Robot Operating System (ROS) serves as the butler.
-All the hardware components are easy to access or 3d printable.
+The Robot Operating System (ROS), as a butler serves a **Raspberry Pi** SBC making high-level decisions.
 
 ![homer_portrait](assets/images/homer_portrait.png)
 
@@ -19,3 +17,14 @@ All the hardware components are easy to access or 3d printable.
 | **Computer** | Raspberry Pi 5 (4GB) |
 | **Operating System** | Ubuntu 24.04 |
 | **Robot Manager** | ROS2 Jazzy |
+
+## Open-Sourced
+
+- Mechanical design: [https://github.com/linzhangUCA/homer_me](https://github.com/linzhangUCA/homer_me)
+- Electrical design: [https://github.com/linzhangUCA/homer_ee](https://github.com/linzhangUCA/homer_ee)
+- Microcontroller scripts: [https://github.com/linzhangUCA/homer_pico](https://github.com/linzhangUCA/homer_pico)
+- Hardward interfacing (ROS) package: [https://github.com/linzhangUCA/homer_bringup](https://github.com/linzhangUCA/homer_bringup)
+- SLAM and navigation (ROS) package: [https://github.com/linzhangUCA/homer_navigation](https://github.com/linzhangUCA/homer_navigation)
+
+!!! tip "Resources"
+    All the hardware components are easy to access or 3d printable.
