@@ -2,19 +2,25 @@
 
 ![components_overview](assets/images/components_overview.jpg)
 
-## 1 Assemble wheel
+## 1 Wheel Assembly
 
-> Align motor and bracket with grooves in the bracket.
-![assemble_motor](assets/images/assemble_wheel.jpg)
+### 1.1 Preparation
+- 1x motor holder (3d printable)
+- 1x 25mm diameter DC motor
+- 2x M3x10mm screw
+- 1x 4mm bore hex motor shaft coupler
+- 1x M4x6mm screw (and washer)
+- 1x 65mm diameter wheel/tire
 
-## 2 Attach wheel assemblies to base
+![pre_wheeL](assets/images/assemble/pre_wheel.png)
 
-![attach_motors](assets/images/attach_wheels.jpg)
+### 1.2 Post Assemble
+!!! warning "Motor Wires"
+    Make sure motor wires sticking out from the same side as the flat surface of the motor holder
 
-## 3 Attach roller to base
+![post_wheeL](assets/images/assemble/post_wheel.png)
 
-![attach_roller](assets/images/attach_roller.jpg)
+You will need to assemble 2 wheels.
 
-## 4 Attach battery holder
 
-![attach_battholder](assets/images/attach_battholder.jpg)
+## 2 Base Assembly
