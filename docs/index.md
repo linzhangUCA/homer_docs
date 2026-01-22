@@ -5,7 +5,7 @@ HomeR is designed for educational purposes with emphases on autonomous **SLAM** 
 It features a differential drive mobile base regulated by a **Raspberry Pi Pico** microcontroller.
 The Robot Operating System (ROS), as a butler serves a **Raspberry Pi** SBC making high-level decisions.
 
-![homer_portrait](assets/images/homer_portrait.png)
+![homer_portrait](assets/images/portrait.png)
 
 ## Key Specifications
 
