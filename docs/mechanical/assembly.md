@@ -25,7 +25,7 @@ You will need to assemble 2 wheels.
 
 ## 2 Base Assembly
 
-### 1.1 Preparation
+### 2.1 Preparation
 - 1x base (3d printable)
 - 1x caster wheel (3d printable)
 - 2x wheel assembly
@@ -37,7 +37,7 @@ You will need to assemble 2 wheels.
 
 ![pre_base](assets/images/assemble/pre_base.png)
 
-### 1.2 Post Assemble
+### 2.2 Post Assemble
 
 
 ![post_base-bot](assets/images/assemble/post_base-bot.png)
@@ -47,3 +47,29 @@ You will need to assemble 2 wheels.
 ![post_base-top](assets/images/assemble/post_base-top.png)
 
 !!! tip "Top View"
+
+## 3 Electronics Stack
+
+### 3.1 Preparation
+- 1x Power expansion board
+- 1x Raspberry Pi 5
+- 1x HomeR Thalamus board (relay)
+- 1x Raspberry Pi Pico 2
+- 1x GY-521 IMU module
+- 1x HC-SR04 ultrasonic module
+- 2x Pololu DRV8874 motor driver carrier
+- 1x caster wheel (3d printable)
+- 2x wheel assembly
+- 1x battery holder
+- 7x M2.5x16mm M-F standoff (use 8 if extra security is needed)
+- 4x M2.5x6mm M-F standoff
+- 3x M2.5x6mm screw (use 4 if 8 M2.5x16mm standoff were used)
+- 4x M2.5 nut
+- 1x 2-Pin cable with JST-RCY female connector
+- 1x 2-Pin cable with JST-RCY female connector
+- 1x 2-Pin cable with JST-XH2.54 male connector on one end
+- 1x 2-Pin cable with JST-XH2.54 male connector on both ends
+- 1x Micro-USB cable (data capable)
+- 1x USB-C to USB-C cable (data not required)
+
+![pre_electronics](assets/images/assemble/pre_electronics.png)
