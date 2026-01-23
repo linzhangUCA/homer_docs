@@ -73,3 +73,31 @@ You will need to assemble 2 wheels.
 - 1x USB-C to USB-C cable (data not required)
 
 ![pre_electronics](assets/images/assemble/pre_electronics.png)
+
+### 3.2 Post Assemble
+
+#### 3.2.1 M2.5x6mm stands
+
+![m2.5-6_stands](assets/images/assemble/m2.5-6_stands.png)
+
+#### 3.2.2 Power expansion board stack
+
+!!! note "Power Input"
+    You'll want to attach the power input cable (with JST-RCY connector) to the blue terminal before stacking the next level (Pi5).
+![peb_stack](assets/images/assemble/peb_stack.png)
+
+#### 3.2.3 Raspberry Pi 5 stack
+
+!!! note "Space Above"
+    - Use M2.5x16mm or longer standoffs on **top** of the Pi5, or the HomeR Thalamus board will be likely touching the cooling fan.
+    - It is optional to attach GPIO extension to the Pi5.
+![pi5_stack](assets/images/assemble/pi5_stack.png)
+
+#### 3.2.4 Thalamus stack
+
+![thalamus_stack](assets/images/assemble/thalamus_stack.png)
+
+#### 3.2.5 Finish differential drive mobile base (electronics stacking)
+Plug in cables and wires.
+
+![post_electronics](assets/images/assemble/post_electronics.png)
