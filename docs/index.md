@@ -11,7 +11,7 @@ The Robot Operating System (ROS), as a butler serves a **Raspberry Pi** SBC maki
 
 | Features | Details |
 | :--- | :--- |
-| **Dimensions** | 180 x 180 x 180 |
+| **Dimensions** | 180mm x 180mm x 180mm |
 | **Microcontroller** | Raspberry Pi Pico 2 (RP2350) |
 | **MicroPython Firmware** | 1.27.0 |
 | **Computer** | Raspberry Pi 5 (4GB) |
@@ -26,5 +26,3 @@ The Robot Operating System (ROS), as a butler serves a **Raspberry Pi** SBC maki
 - Hardward interfacing (ROS) package: [https://github.com/linzhangUCA/homer_bringup](https://github.com/linzhangUCA/homer_bringup)
 - SLAM and navigation (ROS) package: [https://github.com/linzhangUCA/homer_navigation](https://github.com/linzhangUCA/homer_navigation)
 
-!!! tip "Resources"
-    All the hardware components are easy to access or 3d printable.
