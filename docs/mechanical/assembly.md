@@ -1,4 +1,4 @@
-# R1B Assembly Guide
+# Assembly Guide
 
 ![components_overview](assets/images/components_overview.jpg)
 
