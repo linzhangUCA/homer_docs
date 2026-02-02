@@ -23,7 +23,7 @@
 | [Raspberry Pi Pico 2](https://www.raspberrypi.com/products/raspberry-pi-pico-2/) | 1 | Dual processors @ 150MHz |
 | [Pololu DRV8874 motor driver carrier](https://www.pololu.com/product/4035) | 2 | Delivers continuous 2.1A to a 4.5V to 37V brushed motor |
 | [GY-521 IMU breakout board](https://a.co/d/2Fc7YRB) | 1 | Carries 6-axis accelerometer and gyroscope: MPU6050 |
-| [SR-HC04 ultrasonic distence sensor](https://a.co/d/cIc6hvg) | 1 | 0.03m to 4m detection within 15$^\circ$ |
+| [SR-HC04 ultrasonic distence sensor](https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html) | 1 | 0.03m to 4m detection within 15$^\circ$ |
 | [HomeR thalamus](https://github.com/linzhangUCA/homer_ee/blob/main/homer_thalamus/gerbers/homer_thalamus-gerber.zip) | 1 | gerber files for [JLCPCB](https://cart.jlcpcb.com/quote) |
 | [RPLidar A1M8](https://www.slamtec.com/en/Lidar/A1) | 1 | 12m detection range, 360$^\circ$ ranging @ 5.5Hz |
 | [MicroUSB cable](https://a.co/d/4cDLAZ5) | 2 | USB2.0, 480Mbps data transfer speed |

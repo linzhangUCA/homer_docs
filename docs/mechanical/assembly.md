@@ -12,7 +12,7 @@
 - 1x M4x6mm screw (and washer)
 - 1x 65mm diameter wheel/tire
 
-![pre_wheeL](assets/images/assemble/pre_wheel.png)
+![pre_wheel](assets/images/assemble/pre_wheel.png)
 
 ### 1.2 Post Assemble
 !!! warning "Motor Wires"
