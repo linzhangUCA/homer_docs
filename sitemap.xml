@@ -2,18 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://linzhanguca.github.io/homer_docs/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-02-02</lastmod>
+    </url>
+    <url>
+         <loc>https://linzhanguca.github.io/homer_docs/electrical/power/</loc>
+         <lastmod>2026-02-02</lastmod>
     </url>
     <url>
          <loc>https://linzhanguca.github.io/homer_docs/mechanical/assembly/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-02-02</lastmod>
     </url>
     <url>
          <loc>https://linzhanguca.github.io/homer_docs/mechanical/components/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-02-02</lastmod>
     </url>
     <url>
          <loc>https://linzhanguca.github.io/homer_docs/mechanical/designs/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-02-02</lastmod>
+    </url>
+    <url>
+         <loc>https://linzhanguca.github.io/homer_docs/software/ros_setup/</loc>
+         <lastmod>2026-02-02</lastmod>
+    </url>
+    <url>
+         <loc>https://linzhanguca.github.io/homer_docs/software/upython_setup/</loc>
+         <lastmod>2026-02-02</lastmod>
     </url>
 </urlset>
