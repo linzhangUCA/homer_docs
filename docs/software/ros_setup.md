@@ -66,12 +66,26 @@ ros2 run demo_nodes_py listener
 
 
 ## 3. System Environment Setup
-You may have noticed that every time a new terminal window started, we will need to run `source /opt/ros/jazzy/setup.bash` to activate ROS 2.
-This is not very convenient.
-And there are other needs for a smoother ROS developing experience.
+You may have noticed that we need to run `source /opt/ros/jazzy/setup.bash` to activate ROS 2 every time a new terminal started, which is very inconvenient.
+To make the ROS developing experience smoother, following configuration can be done.
 
-1. Activate ROS 2 automatically.
-2. Enable message paths between machines
-3. Start a dedicated workspace
-4. Switch to a navigation friendly data distribution system (DDS).
-5. Automatic complete `colcon` command.
+### 3.1. Activate ROS 2 automatically.
+Append `source /opt/ros/jazzy/setup.bash` to (the end of) `$HOME/.bashrc`
+
+### 3.2. Enable message paths between machines
+ROS domain.
+
+### 3.3. Start a dedicated workspace
+`mkdir -p ros_ws/src`
+
+### 3.4. Switch to a navigation friendly data distribution system (DDS).
+`sudo apt install ros-jazzy-rmw-cyclonedds-cpp`
+
+### 3.5. Automatic complete `colcon` command.
+`source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash`
+
+!!! tip "User Configuration Script"
+    In Ubuntu (and many Linux distros), a bash shell configuration file is saved at `$HOME/.bashrc`.
+    The scripts stored in this file will be executed every time the user started a terminal session.
+
+```
