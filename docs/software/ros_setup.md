@@ -11,7 +11,7 @@ We will install and set up system environment of ROS 2 on both Raspberry Pi and 
     - or simply [run ROS 2 in dockers](https://docs.ros.org/en/jazzy/How-To-Guides/Run-2-nodes-in-single-or-separate-docker-containers.html).
 
 ## 1. Installation
-We recommend you following the official guide to [install ROS 2 with Ubuntu `deb` packages](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html).
+Please refer to the official guide to [install ROS 2 with Ubuntu `deb` packages](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html).
 
 !!! danger "Version Binding"
     If this is your first time, please strictly bind the ROS 2 version: **Jazzy** with Ubuntu version: **24.04**.
@@ -19,9 +19,10 @@ We recommend you following the official guide to [install ROS 2 with Ubuntu `deb
 We have summarized all the shell commands from the official guide as below.
 Copy and paste them to your terminal window to install ROS 2
 
-``` bash
+``` sh
 # Set locale
-sudo apt update && sudo apt install locales
+sudo apt update && sudo apt upgrade -y
+sudo apt install locales
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -39,8 +40,6 @@ sudo dpkg -i /tmp/ros2-apt-source.debl
 sudo apt update && sudo apt install ros-dev-tools
 
 # Install ROS 2
-sudo apt update
-sudo apt upgrade
 sudo apt install ros-jazzy-desktop
 ```
 
@@ -50,7 +49,7 @@ This step verifies if ROS 2's communication, C++ and Python API are working corr
     This is exactly the same as the [Try some examples](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html#try-some-examples) section in the official installation guide.
 
 In one terminal, source the setup file and then run a C++ `talker`:
-```bash
+```sh
 source /opt/ros/jazzy/setup.bash
 ros2 run demo_nodes_cpp talker
 ```
@@ -70,7 +69,7 @@ You may have noticed that we need to run `source /opt/ros/jazzy/setup.bash` to a
 To make the ROS developing experience smoother, following configuration can be done.
 
 ### 3.1. Activate ROS 2 automatically.
-Append `source /opt/ros/jazzy/setup.bash` to (the end of) `$HOME/.bashrc`
+Append `source /opt/ros/jazzy/setup.bash` to (the end of) `$HOME/.bashrc`.
 
 ### 3.2. Enable message paths between machines
 ROS domain.
@@ -84,8 +83,14 @@ ROS domain.
 ### 3.5. Automatic complete `colcon` command.
 `source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash`
 
-!!! tip "User Configuration Script"
+???+ tip "User Configuration Script"
     In Ubuntu (and many Linux distros), a bash shell configuration file is saved at `$HOME/.bashrc`.
     The scripts stored in this file will be executed every time the user started a terminal session.
 
+``` sh
+source /opt/ros/jazzy/setup.bash
+source $HOME/ros_ws/install/local_setup.bash
+export ROS_DOMAIN_ID=<0_to_200>
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 ```
