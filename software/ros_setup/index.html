@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://linzhanguca.github.io/homer_docs/software/ros_setup/">
       
       
-        <link rel="prev" href="../../mechanical/designs/">
+        <link rel="prev" href="../homer_pack/">
       
       
         <link rel="next" href="../upython_setup/">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Ros setup - HomeR Docs</title>
+        <title>Setup ROS 2 Packages - HomeR Docs</title>
       
     
     
@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#setup-ros-2-packages" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ros setup
+              Setup ROS 2 Packages
             
           </span>
         </div>
@@ -281,7 +286,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../homer_pack/" class="md-tabs__link">
           
   
   
@@ -656,6 +661,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../homer_pack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up HomeR Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -665,6 +698,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup ROS 2 Packages
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -673,7 +726,7 @@
   <span class="md-ellipsis">
     
   
-    Ros setup
+    Setup ROS 2 Packages
   
 
     
@@ -682,6 +735,75 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-verify-ros-2-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Verify ROS 2 Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ros-2-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ROS 2 Environment Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ROS 2 Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Explanation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -740,6 +862,66 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-verify-ros-2-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Verify ROS 2 Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ros-2-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ROS 2 Environment Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ROS 2 Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Explanation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -759,9 +941,116 @@
   
 
 
-  <h1>Ros setup</h1>
-
-
+<h1 id="setup-ros-2-packages">Setup ROS 2 Packages</h1>
+<p>We will install and set up system environment of ROS 2 on both Raspberry Pi and a host computer.</p>
+<details class="info" open="open">
+<summary>Operating System (OS)</summary>
+<p>According to the <a href="https://reps.openrobotics.org/rep-2000/#jazzy-jalisco-may-2024---may-2029">REP-2000</a> list, Ubuntu 24.04 and Windows 10 are both tier 1 supported OS by ROS 2 Jazzy, and MacOS is on the tier 3 list.
+This means you can pretty much install ROS 2 on any OS.
+But installing Ubuntu on Raspberry Pi is way easier.
+Interested readers can follow the official guides to:
+- <a href="https://docs.ros.org/en/jazzy/Installation/Windows-Install-Binary.html">install ROS 2 on Windows</a>
+- <a href="https://docs.ros.org/en/jazzy/Installation/Alternatives/macOS-Development-Setup.html">build ROS 2 from source on MacOS</a>
+- or simply <a href="https://docs.ros.org/en/jazzy/How-To-Guides/Run-2-nodes-in-single-or-separate-docker-containers.html">run ROS 2 in dockers</a>.</p>
+</details>
+<h2 id="1-installation">1. Installation</h2>
+<p>Please refer to the official guide to <a href="https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html">install ROS 2 with Ubuntu <code>deb</code> packages</a>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Version Binding</p>
+<p>If this is your first time, please strictly bind the ROS 2 version: <strong>Jazzy</strong> with Ubuntu version: <strong>24.04</strong>.</p>
+</div>
+<p>We have summarized all the shell commands from the official guide as below.
+Copy and paste them to your terminal window to install ROS 2</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Set locale</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>locales
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>sudo<span class="w"> </span>locale-gen<span class="w"> </span>en_US<span class="w"> </span>en_US.UTF-8
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>sudo<span class="w"> </span>update-locale<span class="w"> </span><span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8<span class="w"> </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Enable required repositories</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>software-properties-common
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>universe
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>curl<span class="w"> </span>-y
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_APT_SOURCE_VERSION</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;tag_name&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span>-F<span class="se">\&quot;</span><span class="w"> </span><span class="s1">&#39;{print $4}&#39;</span><span class="k">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>/tmp/ros2-apt-source.deb<span class="w"> </span><span class="s2">&quot;https://github.com/ros-infrastructure/ros-apt-source/releases/download/</span><span class="si">${</span><span class="nv">ROS_APT_SOURCE_VERSION</span><span class="si">}</span><span class="s2">/ros2-apt-source_</span><span class="si">${</span><span class="nv">ROS_APT_SOURCE_VERSION</span><span class="si">}</span><span class="s2">.</span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">UBUNTU_CODENAME</span><span class="k">:-</span><span class="si">${</span><span class="nv">VERSION_CODENAME</span><span class="si">}}</span><span class="k">)</span><span class="s2">_all.deb&quot;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>/tmp/ros2-apt-source.debl
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># Install development tools</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-dev-tools
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="c1"># Install ROS 2</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-jazzy-desktop
+</span></code></pre></div>
+<h2 id="2-verify-ros-2-installation">2. Verify ROS 2 Installation</h2>
+<p>This step verifies if ROS 2's communication, C++ and Python API are working correctly.</p>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>This is exactly the same as the <a href="https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html#try-some-examples">Try some examples</a> section in the official installation guide.</p>
+</details>
+<p>In one terminal, source the setup file and then run a C++ <code>talker</code>:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ros2<span class="w"> </span>run<span class="w"> </span>demo_nodes_cpp<span class="w"> </span>talker
+</span></code></pre></div>
+<p>In another terminal source the setup file and then run a Python <code>listener</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>ros2<span class="w"> </span>run<span class="w"> </span>demo_nodes_py<span class="w"> </span>listener
+</span></code></pre></div>
+<details class="tip" open="open">
+<summary>Tip</summary>
+<p>Hold <code>Ctrl</code> then press <code>c</code> on the keyboard will terminate the executing program.</p>
+</details>
+<h2 id="3-ros-2-environment-setup">3. ROS 2 Environment Setup</h2>
+<ul>
+<li>Install CycloneDDS (from terminal).</li>
+</ul>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-jazzy-rmw-cyclonedds-cpp
+</span></code></pre></div>
+<p>Edit <code>$HOME/bashrc</code> file and add following to (the bottom of) the file.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash<span class="w">  </span><span class="c1"># activate ros2</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_DOMAIN_ID</span><span class="o">=</span><span class="m">123</span><span class="w">  </span><span class="c1"># same on all devices, 0~232</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_cyclonedds_cpp<span class="w">  </span><span class="c1"># use cyclonedds</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">source</span><span class="w"> </span>/usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash<span class="w">  </span><span class="c1"># autocomplete colcon commands</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">_colcon_cd_root</span><span class="o">=</span>/opt/ros/jazzy/<span class="w">  </span><span class="c1"># specify ros2 root dir</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>ROS_DOMAIN_ID</code> can be set to any number between 0 and 232.
+See the following section for more details.</p>
+</div>
+<details class="tip" open="open">
+<summary>User Configuration Script</summary>
+<p>In Ubuntu (and many Linux distros), a shell configuration file is saved at <code>$HOME/.bashrc</code>.
+The commands stored in this file will be executed every time the user started a terminal session.</p>
+</details>
+<h3 id="quick-explanation">Quick Explanation</h3>
+<ol>
+<li>
+<p>Add <code>source /opt/ros/jazzy/setup.bash</code> to <code>$HOME/.bashrc</code> file will automatically activate <code>ros2</code> command.
+Or, we need to manually activate it every time a new terminal started, which is very inconvenient.</p>
+</li>
+<li>
+<p>To ensure nodes running on different devices can communicate with each other, we need to designate a domain ID to these devices.
+Append <code>export ROS_DOMAIN_ID=&lt;id_number&gt;</code> to <code>$HOME/.bashrc</code> file, where <code>&lt;id_number&gt;</code> should be within the range between 0 to 232.
+For more details, please read the official guide <a href="https://docs.ros.org/en/jazzy/Concepts/Intermediate/About-Domain-ID.html">about domain ID</a>.</p>
+</li>
+<li>
+<p>ROS 2 is using Data Distribution System (DDS) for communication management.
+The default FastDDS is OK, but not the ideal one for working with the navigation.
+We found Eclipse CycloneDDS is a good alternative, so we install it by:
+<code>sudo apt install ros-jazzy-rmw-cyclonedds-cpp</code>.
+Then enable it by appending <code>export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp</code> to the <code>$HOME/.bashrc</code> file.</p>
+</li>
+<li>
+<p><a href="http://colcon.readthedocs.io/"><code>colcon</code></a> is a command line tool to improve the workflow of building, testing and using multiple software packages.
+Add <code>source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash</code> to <code>$HOME/.bashrc</code> file will enable autocompletion function of <code>colcon</code>.</p>
+</li>
+<li>
+<p>We can quickly navigate around ROS 2 packages using the <code>colcon_cd</code> command.
+Set the system environment variable: <code>export _colcon_cd_root=/opt/ros/jazzy/</code> in <code>$HOME/.bashrc</code> will designate root directory of all ROS 2 packages.</p>
+</li>
+</ol>
 
 
 
@@ -817,7 +1106,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy", "content.tooltips", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy", "content.code.select", "content.tooltips", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
