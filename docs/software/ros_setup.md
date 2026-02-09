@@ -76,7 +76,7 @@ ros2 run demo_nodes_py listener
 sudo apt install ros-jazzy-rmw-cyclonedds-cpp
 ```
 
-Edit `~/.bashrc` file and add following to (the bottom of) the file.
+Edit `$HOME/bashrc` file and add following to (the bottom of) the file.
 
 ``` sh
 source /opt/ros/jazzy/setup.bash  # activate ros2
