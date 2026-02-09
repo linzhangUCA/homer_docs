@@ -1,8 +1,9 @@
 # Setup ROS 2 Environment
+
 We will install and set up system environment of ROS 2 on both Raspberry Pi and a host computer.
 
 ???+ info "Operating System (OS)"
-    According to the [REP-2000](https://reps.openrobotics.org/rep-2000/#jazzy-jalisco-may-2024---may-2029) list, Ubuntu 24.04 and Windows 10 are both tier 1 supported OS by ROS 2 Jazzy, and MacOS is on the tier 3 list. 
+    According to the [REP-2000](https://reps.openrobotics.org/rep-2000/#jazzy-jalisco-may-2024---may-2029) list, Ubuntu 24.04 and Windows 10 are both tier 1 supported OS by ROS 2 Jazzy, and MacOS is on the tier 3 list.
     This means you can pretty much install ROS 2 on any OS.
     But installing Ubuntu on Raspberry Pi is way easier.
     Interested readers can follow the official guides to:
@@ -11,6 +12,7 @@ We will install and set up system environment of ROS 2 on both Raspberry Pi and 
     - or simply [run ROS 2 in dockers](https://docs.ros.org/en/jazzy/How-To-Guides/Run-2-nodes-in-single-or-separate-docker-containers.html).
 
 ## 1. Installation
+
 Please refer to the official guide to [install ROS 2 with Ubuntu `deb` packages](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html).
 
 !!! danger "Version Binding"
@@ -44,17 +46,20 @@ sudo apt install ros-jazzy-desktop
 ```
 
 ## 2. Verify ROS 2 Installation
+
 This step verifies if ROS 2's communication, C++ and Python API are working correctly.
 ???+ tip
     This is exactly the same as the [Try some examples](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html#try-some-examples) section in the official installation guide.
 
 In one terminal, source the setup file and then run a C++ `talker`:
+
 ```sh
 source /opt/ros/jazzy/setup.bash
 ros2 run demo_nodes_cpp talker
 ```
 
 In another terminal source the setup file and then run a Python `listener`:
+
 ```bash
 source /opt/ros/jazzy/setup.bash
 ros2 run demo_nodes_py listener
@@ -63,36 +68,50 @@ ros2 run demo_nodes_py listener
 ???+ tip
     Hold `Ctrl` then press `c` on the keyboard will terminate the executing program.
 
-
 ## 3. System Environment Setup
 
-### 3.1. Activate ROS 2 automatically.
+Install tools:
 
-Append `source /opt/ros/jazzy/setup.bash` to (the end of) `$HOME/.bashrc` file will automatically activate `ros2` command.
-Or, we need to manually activate it every time a new terminal started, which is very inconvenient.
+An example `~/.bashrc` file is as the below.
 
-### 3.2. Enable message paths among machines
-To ensure nodes running on different devices can communicate with each other, we need to designate a domain ID to these devices.
-Append `export ROS_DOMAIN_ID=<domain_number>` to (the end of) `$HOME/.bashrc`, where `<domain_number>` should be within the range between 0 to 232.
-For more details, please refer to the official guide [about domain ID](https://docs.ros.org/en/jazzy/Concepts/Intermediate/About-Domain-ID.html).
-
-### 3.3. Use a dedicated workspace
-`mkdir -p ros_ws/src`
-
-### 3.4. Switch to a navigation friendly data distribution system (DDS).
-`sudo apt install ros-jazzy-rmw-cyclonedds-cpp`
-
-### 3.5. Automatic complete `colcon` command.
-`source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash`
+``` sh
+source /opt/ros/jazzy/setup.bash  # activate ros2
+source $HOME/homer_ws/install/local_setup.bash  # register HomeR's packages
+export ROS_DOMAIN_ID=123  # same on all devices, 0~232
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp  # use cyclonedds
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash  # autocomplete colcon commands
+```
 
 ???ip "User Configuration Script"
     In Ubuntu (and many Linux distros), a bash shell configuration file is saved at `$HOME/.bashrc`.
     The scripts stored in this file will be executed every time the user started a terminal session.
 
-``` sh
-source /opt/ros/jazzy/setup.bash
-source $HOME/ros_ws/install/local_setup.bash
-export ROS_DOMAIN_ID=<0_to_200>
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
-```
+Interested readers can follow the contents below to take a peek at the detailed explanation of the executions above.
+
+### 3.2. Activate ROS 2 automatically
+
+Append `source /opt/ros/jazzy/setup.bash` to (the end of) `$HOME/.bashrc` file will automatically activate `ros2` command.
+Or, we need to manually activate it every time a new terminal started, which is very inconvenient.
+
+### 3.3. Enable message paths among machines
+
+To ensure nodes running on different devices can communicate with each other, we need to designate a domain ID to these devices.
+Append `export ROS_DOMAIN_ID=<domain_number>` to (the end of) `$HOME/.bashrc`, where `<domain_number>` should be within the range between 0 to 232.
+For more details, please read the official guide [about domain ID](https://docs.ros.org/en/jazzy/Concepts/Intermediate/About-Domain-ID.html).
+
+### 3.4. Use a dedicated workspace
+
+When you have multiple projects to manage, keep HomeR distinctive and organized is important.
+Create a dedicated ROS 2 workspace for it and reserve the `src` directory for the packages with the command:
+`mkdir -p <workspace_path>/src`
+
+### 3.5. Switch to a navigation friendly data distribution system (DDS)
+
+ROS 2 is using Data Distribution System (DDS) for communication management.
+The default Fast DDS is OK, but not the ideal one for working with the navigation.
+We found Eclipse Cyclone DDS is a good alternative, so you can install it by:
+`sudo apt install ros-jazzy-rmw-cyclonedds-cpp`
+
+### 3.6. Automatic complete `colcon` command
+
+`source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash`
