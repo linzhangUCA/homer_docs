@@ -65,16 +65,18 @@ ros2 run demo_nodes_py listener
 
 
 ## 3. System Environment Setup
-You may have noticed that we need to run `source /opt/ros/jazzy/setup.bash` to activate ROS 2 every time a new terminal started, which is very inconvenient.
-To make the ROS developing experience smoother, following configuration can be done.
 
 ### 3.1. Activate ROS 2 automatically.
-Append `source /opt/ros/jazzy/setup.bash` to (the end of) `$HOME/.bashrc`.
 
-### 3.2. Enable message paths between machines
-ROS domain.
+Append `source /opt/ros/jazzy/setup.bash` to (the end of) `$HOME/.bashrc` file will automatically activate `ros2` command.
+Or, we need to manually activate it every time a new terminal started, which is very inconvenient.
 
-### 3.3. Start a dedicated workspace
+### 3.2. Enable message paths among machines
+To ensure nodes running on different devices can communicate with each other, we need to designate a domain ID to these devices.
+Append `export ROS_DOMAIN_ID=<domain_number>` to (the end of) `$HOME/.bashrc`, where `<domain_number>` should be within the range between 0 to 232.
+For more details, please refer to the official guide [about domain ID](https://docs.ros.org/en/jazzy/Concepts/Intermediate/About-Domain-ID.html).
+
+### 3.3. Use a dedicated workspace
 `mkdir -p ros_ws/src`
 
 ### 3.4. Switch to a navigation friendly data distribution system (DDS).
@@ -83,7 +85,7 @@ ROS domain.
 ### 3.5. Automatic complete `colcon` command.
 `source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash`
 
-???+ tip "User Configuration Script"
+???ip "User Configuration Script"
     In Ubuntu (and many Linux distros), a bash shell configuration file is saved at `$HOME/.bashrc`.
     The scripts stored in this file will be executed every time the user started a terminal session.
 
