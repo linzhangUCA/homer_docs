@@ -1,4 +1,4 @@
-# Setup ROS 2 Environment
+# Setup ROS 2 Packages
 
 We will install and set up system environment of ROS 2 on both Raspberry Pi and a host computer.
 
@@ -68,50 +68,49 @@ ros2 run demo_nodes_py listener
 ???+ tip
     Hold `Ctrl` then press `c` on the keyboard will terminate the executing program.
 
-## 3. System Environment Setup
+## 3. ROS 2 Environment Setup
 
-Install tools:
+- Install CycloneDDS (from terminal).
 
-An example `~/.bashrc` file is as the below.
+```sh
+sudo apt install ros-jazzy-rmw-cyclonedds-cpp
+```
+
+Edit `~/.bashrc` file and add following to (the bottom of) the file.
 
 ``` sh
 source /opt/ros/jazzy/setup.bash  # activate ros2
-source $HOME/homer_ws/install/local_setup.bash  # register HomeR's packages
 export ROS_DOMAIN_ID=123  # same on all devices, 0~232
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp  # use cyclonedds
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash  # autocomplete colcon commands
+export _colcon_cd_root=/opt/ros/jazzy/  # specify ros2 root dir
 ```
 
-???ip "User Configuration Script"
-    In Ubuntu (and many Linux distros), a bash shell configuration file is saved at `$HOME/.bashrc`.
-    The scripts stored in this file will be executed every time the user started a terminal session.
+!!! note
+    `ROS_DOMAIN_ID` can be set to any number between 0 and 232.
+    See the following section for more details.
 
-Interested readers can follow the contents below to take a peek at the detailed explanation of the executions above.
+???+ tip "User Configuration Script"
+    In Ubuntu (and many Linux distros), a shell configuration file is saved at `$HOME/.bashrc`.
+    The commands stored in this file will be executed every time the user started a terminal session.
 
-### 3.2. Activate ROS 2 automatically
+### Quick Explanation
 
-Append `source /opt/ros/jazzy/setup.bash` to (the end of) `$HOME/.bashrc` file will automatically activate `ros2` command.
+1. Add `source /opt/ros/jazzy/setup.bash` to `$HOME/.bashrc` file will automatically activate `ros2` command.
 Or, we need to manually activate it every time a new terminal started, which is very inconvenient.
 
-### 3.3. Enable message paths among machines
-
-To ensure nodes running on different devices can communicate with each other, we need to designate a domain ID to these devices.
-Append `export ROS_DOMAIN_ID=<domain_number>` to (the end of) `$HOME/.bashrc`, where `<domain_number>` should be within the range between 0 to 232.
+2. To ensure nodes running on different devices can communicate with each other, we need to designate a domain ID to these devices.
+Append `export ROS_DOMAIN_ID=<id_number>` to `$HOME/.bashrc` file, where `<id_number>` should be within the range between 0 to 232.
 For more details, please read the official guide [about domain ID](https://docs.ros.org/en/jazzy/Concepts/Intermediate/About-Domain-ID.html).
 
-### 3.4. Use a dedicated workspace
+3. ROS 2 is using Data Distribution System (DDS) for communication management.
+The default FastDDS is OK, but not the ideal one for working with the navigation.
+We found Eclipse CycloneDDS is a good alternative, so we install it by:
+`sudo apt install ros-jazzy-rmw-cyclonedds-cpp`.
+Then enable it by appending `export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp` to the `$HOME/.bashrc` file.
 
-When you have multiple projects to manage, keep HomeR distinctive and organized is important.
-Create a dedicated ROS 2 workspace for it and reserve the `src` directory for the packages with the command:
-`mkdir -p <workspace_path>/src`
+4. [`colcon`](http://colcon.readthedocs.io/) is a command line tool to improve the workflow of building, testing and using multiple software packages.
+Add `source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash` to `$HOME/.bashrc` file will enable autocompletion function of `colcon`.
 
-### 3.5. Switch to a navigation friendly data distribution system (DDS)
-
-ROS 2 is using Data Distribution System (DDS) for communication management.
-The default Fast DDS is OK, but not the ideal one for working with the navigation.
-We found Eclipse Cyclone DDS is a good alternative, so you can install it by:
-`sudo apt install ros-jazzy-rmw-cyclonedds-cpp`
-
-### 3.6. Automatic complete `colcon` command
-
-`source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash`
+5. We can quickly navigate around ROS 2 packages using the `colcon_cd` command.
+Set the system environment variable: `export _colcon_cd_root=/opt/ros/jazzy/` in `$HOME/.bashrc` will designate root directory of all ROS 2 packages.
