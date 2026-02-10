@@ -1,4 +1,4 @@
-# Setup ROS 2 Packages
+# Setup ROS 2
 
 We will install and set up system environment of ROS 2 on both Raspberry Pi and a host computer.
 
