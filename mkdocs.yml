@@ -5,6 +5,12 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
+  features:
+    - navigation.tabs        # Top navigation bar
+    - navigation.sections    # Sidebar grouping
+    - content.code.copy      # Copy button on code blocks
+    - content.tooltips
+    - navigation.top         # "Back to top" button
   palette:
     # Light Mode
     - scheme: default
@@ -20,14 +26,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  features:
-    - navigation.tabs        # Top navigation bar
-    - navigation.sections    # Sidebar grouping
-    - content.code.copy      # Copy button on code blocks
-    - content.code.select
-    - content.tooltips
-    - navigation.top         # "Back to top" button
-
 # Extensions to make your docs powerful
 markdown_extensions:
   - admonition                # Info/Warning boxes
@@ -46,12 +44,11 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
-  - pymdownx.emoji:           # Icons like :smile:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.arithmatex:      # Math/LaTeX support
       generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 # MathJax setup for rendering equations
 extra_javascript:
