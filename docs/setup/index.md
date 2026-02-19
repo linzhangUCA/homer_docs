@@ -4,5 +4,5 @@ The following guides will help you set up the HomeR by means of hardware and sof
 
 - [Mobile base assembly guides]()
 - [Setup the microcontroller: Raspberry Pi Pico 2](pico.md)
-- [Setup the microcontroller: Raspberry Pi Pico 2](pico.md)
-
+- [Install Ubuntu](ubuntu.md)
+- [Setup ROS Enviroment](ros.md)

@@ -30,7 +30,7 @@ sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Enable required repositories
-sudo apt install software-properties-common
+sudo apt install software-properties-common -y
 sudo add-apt-repository universe
 
 sudo apt update && sudo apt install curl -y
@@ -39,10 +39,10 @@ curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-a
 sudo dpkg -i /tmp/ros2-apt-source.deb
 
 # Install development tools
-sudo apt update && sudo apt install ros-dev-tools
+sudo apt update && sudo apt install ros-dev-tools -y
 
 # Install ROS 2
-sudo apt install ros-jazzy-desktop
+sudo apt install ros-jazzy-desktop -y
 ```
 
 ## 2. Verify ROS 2 Installation
