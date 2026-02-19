@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://linzhanguca.github.io/homer_docs/setup/homer_pack/">
+        <link rel="canonical" href="https://linzhanguca.github.io/homer_docs/setup/rpi/">
       
       
-        <link rel="prev" href="../gamepad/">
+        <link rel="prev" href="../ros/">
       
       
-        <link rel="next" href="../pico/">
+        <link rel="next" href="../server/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Set up HomeR Packages - HomeR Docs</title>
+        <title>Rpi - HomeR Docs</title>
       
     
     
@@ -77,11 +77,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#set-up-homer-packages" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -112,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Set up HomeR Packages
+              Rpi
             
           </span>
         </div>
@@ -717,19 +712,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../homer_pack/" class="md-nav__link">
         
   
   
@@ -745,7 +731,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -811,10 +796,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../rpi/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -830,6 +822,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -887,8 +880,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -908,31 +899,9 @@
   
 
 
-<h1 id="set-up-homer-packages">Set up HomeR Packages</h1>
-<p>When you have multiple projects to manage, keep HomeR distinctive and organized is important.
-This involves:</p>
-<ol>
-<li>Create a dedicated ROS 2 workspace for HomeR and reserve the <code>src</code> directory right under it.</li>
-<li>Clone/Download two ROS 2 packages for HomeR.</li>
-<li>Build the workspace and register HomeR packages.</li>
-</ol>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/homer_ws/src<span class="w">  </span><span class="c1"># create workspace and src dir</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>~/homer_ws/src<span class="w">  </span><span class="c1"># navigate into the src dir</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/linzhangUCA/homer_bringup<span class="w">  </span><span class="c1"># clone hardware interface, required by RPi</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/linzhangUCA/homer_navigation<span class="w">  </span><span class="c1"># clone navigation pack, optional on RPi</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">cd</span><span class="w"> </span>~/homer_ws<span class="w">  </span><span class="c1"># navigate to workspace</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>colcon<span class="w"> </span>build<span class="w">  </span><span class="c1"># build workspace (all packages in it)</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nb">source</span><span class="w"> </span>~/homer_ws/install/local_setup.bash<span class="w">  </span><span class="c1"># register homer packages</span>
-</span></code></pre></div>
-<p>If you want to set <code>homer_ws</code> as your default ROS 2 workspace, then add the registration command: <code>source $HOME/homer_ws/install/local_setup.bash</code> in the <code>$HOME/bashrc</code> file.</p>
-<p>An example of a fully loaded system configuration file for ROS 2 and HomeR is shown as below.</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash<span class="w">  </span><span class="c1"># activate ros2</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_DOMAIN_ID</span><span class="o">=</span><span class="m">123</span><span class="w">  </span><span class="c1"># same on all devices, 0~232</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_cyclonedds_cpp<span class="w">  </span><span class="c1"># use cyclonedds</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">source</span><span class="w"> </span>/usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash<span class="w">  </span><span class="c1"># autocomplete colcon commands</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">_colcon_cd_root</span><span class="o">=</span>/opt/ros/jazzy/<span class="w">  </span><span class="c1"># specify ros2 root dir</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="hll"><span class="nb">source</span><span class="w"> </span><span class="nv">$HOME</span>/homer_ws/install/local_setup.bash<span class="w">  </span><span class="c1"># register HomeR&#39;s packages</span>
-</span></span></code></pre></div>
+  <h1>Rpi</h1>
+
+
 
 
 
