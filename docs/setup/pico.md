@@ -21,5 +21,20 @@ bash <(wget -O - https://thonny.org/installer-for-linux)
 
 - Follow the official guide: [Getting started with Raspberry Pi Pico](https://projects.raspberrypi.org/en/projects/getting-started-with-the-pico/) to install MicroPython Firmware and get familiar with Python coding on the Pico.
 
+- Download `homer_pico` repository
+Open a terminal and enter following commands
+```console
+cd ~  # save to $HOME directory
+git clone https://github.com/linzhangUCA/homer_pico.git
+```
+
 ## 1. Test and Upload Motion Control Scripts
+The HomeR's motion control is a modular design.
+
+### 1.1. [BaseMotor]()
+### 1.2. [EncodedMotor]()
+### 1.3. [SentientWheel]()
+### 1.2. [RegulatedWheel]()
+### 1.2. [DiffDriveController]()
+
 
