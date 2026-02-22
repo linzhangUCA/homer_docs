@@ -28,15 +28,24 @@ git clone https://github.com/linzhangUCA/homer_pico.git
 ```
 
 ## 1. Test and Upload Motion Control Scripts
-The HomeR's motion control is a modular design featured with following Classes.
+The HomeR's motion control is a modular design made up by the following scripts.
+It is highly recommended to test functionality of each module by the order.
 
-### 1.1. [BaseMotor](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/base_motor.py)
-Contains functions to invoke, stop and drive a brushed DC motor using a "Phase/Enable" type of motor driver chip.
-The code below `if __name__ == "__main__"` showcases an usage of the class to ramp up and ramp down the speed of a motor in both forward and backward directions.
-### 1.2. [EncodedMotor](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/encoded_motor.py)
-Adds functions to `BaseMotor` class to count the quadrature encoder's signal changes caused by the motor's rotation.
-### 1.3. [SentientWheel](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/sentient_wheel.py)
-### 1.2. [RegulatedWheel]()
-### 1.2. [DiffDriveController]()
+!!! danger "Lift Wheels"
+    It is very important that the motorized wheels are not contacting anything during the tests.
+    Lift up the robot by putting it on top of something (e.g. a box).
+    Check the wires and cables so that they are free from getting tangled to the wheels.
+
+### 1.1. [`base_motor.py`](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/base_motor.py)
+This script contains the `BaseMotor` class.
+It is featured methods/functions to invoke, stop and drive a brushed DC motor using a "Phase/Enable" type of motor driver chip ([DRV8874](https://www.ti.com/lit/gpn/drv8874)).
+The usage examples and testing code is located under the line: `if __name__ == "__main__":`.
+Run this script to ramp up and down the speed of a motor in both forward and backward directions.
+### 1.2. [`encoded_motor.py`](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/encoded_motor.py)
+This script extends the `BaseMotor` class by adding methods/functions to count the signals changes sensed by a quadrature encoder attached to the motor.
+Run this script to read the encoder counts while the motor speed is ramping up and down.
+### 1.3. [sentient_wheel.py](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/sentient_wheel.py)
+### 1.4. [regulated_wheel.py](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/regulated_wheel.py)
+### 1.5. [diff_drive_controller.py](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/diff_drive_controller.py)
 
 
