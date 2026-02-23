@@ -1,51 +1,45 @@
 # Setup Raspberry Pi Pico 2 (the Cerebellum)
 
-## 0. Pre-Requisites
-### 0.1 Hardware
+## Hardware List
+
 - A Raspberry Pi Pico 2 development board (Pico).
 - A Computer (Desktop/Laptop/RPi)
 - A Micro-USB cable.
-- (Optional) HomeR Thalamus
+- (Optional) [HomeR Thalamus](https://github.com/linzhangUCA/homer_ee)
 
+## Install MicroPython Firmware
 
-### 0.2 Software
-- Install [Thonny](https://thonny.org/)
-Open up a terminal and execute following command:
+Raspberry Pi Foundation has a very detailed and easy-to-follow guide allowing people to [get started using Pico](https://projects.raspberrypi.org/en/projects/getting-started-with-the-pico).
 
-``` sh
-bash <(wget -O - https://thonny.org/installer-for-linux)
-```
+1. Install [Thonny](https://thonny.org/) on the computer.
+    Open up a terminal and execute following command:
 
-!!! tip
-    Go to [thonny.org](https://thonny.org/) for installation guides on other OS.
+    ``` sh
+    bash <(wget -O - https://thonny.org/installer-for-linux)
+    ```
 
-- Follow the official guide: [Getting started with Raspberry Pi Pico](https://projects.raspberrypi.org/en/projects/getting-started-with-the-pico/) to install MicroPython Firmware and get familiar with Python coding on the Pico.
+    !!! tip
+        Go to [thonny.org](https://thonny.org/) for installation guides on other OS.
 
-- Download `homer_pico` repository.
-```console
-cd ~  # save to $HOME directory
-git clone https://github.com/linzhangUCA/homer_pico.git
-```
+1. Install `rshell` if you prefer CLI for managing MicroPython scripts.
 
-## 1. Test and Upload Motion Control Scripts
-The HomeR's motion control is a modular design made up by the following scripts.
-It is highly recommended to test functionality of each module by the order.
+    ```console
+    sudo apt install python3-pip
+    pip install rshell --break-system-packages
+    ```
 
-!!! danger "Lift Wheels"
-    It is very important that the motorized wheels are not contacting anything during the tests.
-    Lift up the robot by putting it on top of something (e.g. a box).
-    Check the wires and cables so that they are free from getting tangled to the wheels.
+1. (First time) Install MicroPython firmware from Thonny
+    1. Click the bottom right corner of Thonny (where shows "Local Python 3"), then select "Install MicroPython"
+    2. In the pop-out window, make sure the "Target volume" is automatically recognized and the "Target model" is set to "Raspberry Pi RP2350" or similar.
+    3. Select "RP2" as the "MicroPython family", "Raspberry Pi Pico 2" as the "variant", "1.27.0" as the "version".
 
-### 1.1. [`base_motor.py`](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/base_motor.py)
-This script contains the `BaseMotor` class.
-It is featured methods/functions to invoke, stop and drive a brushed DC motor using a "Phase/Enable" type of motor driver chip ([DRV8874](https://www.ti.com/lit/gpn/drv8874)).
-The usage examples and testing code is located under the line: `if __name__ == "__main__":`.
-Run this script to ramp up and down the speed of a motor in both forward and backward directions.
-### 1.2. [`encoded_motor.py`](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/encoded_motor.py)
-This script extends the `BaseMotor` class by adding methods/functions to count the signals changes sensed by a quadrature encoder attached to the motor.
-Run this script to read the encoder counts while the motor speed is ramping up and down.
-### 1.3. [sentient_wheel.py](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/sentient_wheel.py)
-### 1.4. [regulated_wheel.py](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/regulated_wheel.py)
-### 1.5. [diff_drive_controller.py](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/diff_drive_controller.py)
+    Click "Install" button to add MicroPython firmware to your Pico board.
 
+## Nuke Pico ("Factory Reset")
 
+In case of the Pico gets frozen or is doing anything unexpected.
+You may want to nuke the Pico board (clear the Flash memory).
+
+1. Download the [`flash_nuke.uf2`](https://datasheets.raspberrypi.com/soft/flash_nuke.uf2) file (If downloaded a `.zip` file, unzip to extract the `.uf2` file.).
+2. Hold the white button on the Pico board while plug the Pico into the computer until the Pico is recognized as a external storage device.
+3. Drag and drop (copy and paste) the `flash_nuke.uf2` file to the external storage device.
