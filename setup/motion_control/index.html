@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://linzhanguca.github.io/homer_docs/setup/ubuntu/">
+        <link rel="canonical" href="https://linzhanguca.github.io/homer_docs/setup/motion_control/">
       
       
-        <link rel="prev" href="../server/">
+        <link rel="prev" href="../homer_pack/">
       
+      
+        <link rel="next" href="../pico/">
       
       
         
@@ -23,7 +25,7 @@
     
     
       
-        <title>Ubuntu - HomeR Docs</title>
+        <title>Motion Controller - HomeR Docs</title>
       
     
     
@@ -75,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#motion-controller" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -105,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ubuntu
+              Motion Controller
             
           </span>
         </div>
@@ -738,6 +745,175 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motion Controller
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motion Controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-homer_pico-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. homer_pico Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-motion-control-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Motion Control Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Motion Control Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-base_motorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. base_motor.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-encoded_motorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. encoded_motor.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-sentient_wheelpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. sentient_wheel.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-regulated_wheelpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. regulated_wheel.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-diff_drive_controllerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. diff_drive_controller.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
@@ -748,7 +924,7 @@
   <span class="md-ellipsis">
     
   
-    Setup Raspberry Pi Pico 2 (the Cerebellum)
+    Setup Raspberry Pi Pico 2 (MicroPython)
   
 
     
@@ -846,42 +1022,6 @@
 
               
             
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ubuntu
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -906,6 +1046,110 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware List
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-homer_pico-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. homer_pico Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-motion-control-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Motion Control Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Motion Control Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-base_motorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. base_motor.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-encoded_motorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. encoded_motor.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-sentient_wheelpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. sentient_wheel.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-regulated_wheelpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. regulated_wheel.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-diff_drive_controllerpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. diff_drive_controller.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -925,9 +1169,74 @@
   
 
 
-  <h1>Ubuntu</h1>
-
-
+<h1 id="motion-controller">Motion Controller</h1>
+<p>The HomeR's motion control is relying on a series of MicroPython scripts running on the Pico board.
+Please follow the steps below to get the Pico ready for driving HomeR and sensing its motion status.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you haven't, please <a href="../pico/">set up the Pico</a> before move on.</p>
+</div>
+<h2 id="hardware-list">Hardware List</h2>
+<ul>
+<li>A Raspberry Pi Pico 2 development board (Pico).</li>
+<li>A Computer (Desktop/Laptop/RPi)</li>
+<li>A Micro-USB cable.</li>
+<li>(Optional) The relay PCB: <a href="https://github.com/linzhangUCA/homer_ee">HomeR Thalamus</a></li>
+</ul>
+<h2 id="1-homer_pico-usage">1. <a href="https://github.com/linzhangUCA/homer_pico"><code>homer_pico</code></a> Usage</h2>
+<ol>
+<li>
+<p>Download and navigate to the repository.</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">cd ~  # use $HOME as an example</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">git clone https://github.com/linzhanguca/homer_pico.git</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">cd homer_pico</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Upload differential drive controller</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">rshell -p /dev/ttyACM0 --buffer-size 512 cp -r upython_scripts/drivetrain /pyboard/</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Set up automatic communication using <a href="./upython_scripts/pico_messenger.py"><code>pico_messenger.py</code></a>.</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">rshell -p /dev/ttyACM0 --buffer-size 512 cp upython_scripts/pico_messenger.py /pyboard/main.py</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A hard reset (unplug Pico then plug it back) is required to activate <code>main.py</code>.</p>
+</div>
+</li>
+</ol>
+<h2 id="2-motion-control-scripts">2. Motion Control Scripts</h2>
+<p>The HomeR's motion control is a modular design made up by the following scripts.
+It is highly recommended to test functionality of each module by the order.</p>
+<div class="admonition danger">
+<p class="admonition-title">Lift Wheels</p>
+<p>It is very important that the motorized wheels are not contacting anything during the tests.
+Lift up the robot by putting it on top of something (e.g. a box).
+Check the wires and cables so that they are free from getting tangled.</p>
+</div>
+<h3 id="21-base_motorpy">2.1. <a href="https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/drivetrain/base_motor.py"><code>base_motor.py</code></a></h3>
+<p>This script contains the <code>BaseMotor</code> class.
+It is featured methods/functions to invoke, stop and drive a brushed DC motor using a "Phase/Enable" type of motor driver chip (<a href="https://www.ti.com/lit/gpn/drv8874">DRV8874</a>).
+The usage examples and testing code is located under the line: <code>if __name__ == "__main__":</code>.
+Run this script to ramp up and down the speed of a motor in both forward and backward directions.</p>
+<h3 id="22-encoded_motorpy">2.2. <a href="https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/drivetrain/encoded_motor.py"><code>encoded_motor.py</code></a></h3>
+<p>This script extends the <code>BaseMotor</code> as the <code>EncodedMotor</code> class.
+It adds methods/functions to count the signal changes sensed by a quadrature encoder attached to the motor.
+Run this script to read the encoder counts while the motor speed is ramping up and down.</p>
+<h3 id="23-sentient_wheelpy">2.3. <a href="https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/drivetrain/sentient_wheel.py">sentient_wheel.py</a></h3>
+<p>This script extends the <code>EncodedMotor</code> as the <code>SentientWheel</code> class.
+It takes the characteristics of the wheel attached to the motor into account.
+Run this script to read the wheel's linear and angular velocity as it is  ramping up and down.</p>
+<h3 id="24-regulated_wheelpy">2.4. <a href="https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/drivetrain/regulated_wheel.py">regulated_wheel.py</a></h3>
+<p>This script extends the <code>SentientWheel</code> as the <code>RegulatedWheel</code> class.
+It adds a PID controller to regulate the motor's velocity.
+Run this script to set a target linear velocity for the wheel.
+The PID controller will assess the gap between the measured velocity and target velocity to adjust control signals.</p>
+<h3 id="25-diff_drive_controllerpy">2.5. <a href="https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/drivetrain/diff_drive_controller.py">diff_drive_controller.py</a></h3>
+<p>This scripts instantiates two <code>RegulatedWheel</code>s to construct the <code>DiffDriveController</code> class.
+It regulates individual wheel's velocity based on</p>
 
 
 
