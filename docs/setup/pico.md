@@ -1,11 +1,10 @@
-# Setup Raspberry Pi Pico 2 (the Cerebellum)
+# Setup Raspberry Pi Pico 2 (MicroPython)
 
 ## Hardware List
 
 - A Raspberry Pi Pico 2 development board (Pico).
 - A Computer (Desktop/Laptop/RPi)
 - A Micro-USB cable.
-- (Optional) [HomeR Thalamus](https://github.com/linzhangUCA/homer_ee)
 
 ## Install MicroPython Firmware
 
