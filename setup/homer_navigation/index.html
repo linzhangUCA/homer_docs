@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://linzhanguca.github.io/homer_docs/setup/pico/">
+        <link rel="canonical" href="https://linzhanguca.github.io/homer_docs/setup/homer_navigation/">
       
       
-        <link rel="prev" href="../motion_control/">
+        <link rel="prev" href="../homer_bringup/">
       
       
-        <link rel="next" href="../ros/">
+        <link rel="next" href="../homer_pack/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Setup Raspberry Pi Pico 2 (MicroPython) - HomeR Docs</title>
+        <title>Set Up homer_navigation Package - HomeR Docs</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setup-raspberry-pi-pico-2-micropython" class="md-skip">
+        <a href="#set-up-homer_navigation-package" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Setup Raspberry Pi Pico 2 (MicroPython)
+              Set Up homer_navigation Package
             
           </span>
         </div>
@@ -745,10 +745,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../homer_navigation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set Up homer_navigation Package
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -764,6 +791,81 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-workspace-if-not-created-one-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a Workspace (if not created one yet)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-homer_navigation-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install homer_navigation Package
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-the-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save the Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -829,37 +931,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Setup Raspberry Pi Pico 2 (MicroPython)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pico/" class="md-nav__link">
         
   
   
@@ -875,59 +950,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#hardware-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hardware List
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-micropython-firmware" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install MicroPython Firmware
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nuke-pico-factory-reset" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Nuke Pico ("Factory Reset")
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1051,10 +1073,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hardware-list" class="md-nav__link">
+  <a href="#create-a-workspace-if-not-created-one-yet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hardware List
+        Create a Workspace (if not created one yet)
       
     </span>
   </a>
@@ -1062,10 +1084,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-micropython-firmware" class="md-nav__link">
+  <a href="#install-homer_navigation-package" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Install MicroPython Firmware
+        Install homer_navigation Package
       
     </span>
   </a>
@@ -1073,10 +1095,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nuke-pico-factory-reset" class="md-nav__link">
+  <a href="#create-a-map" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nuke Pico ("Factory Reset")
+        Create a Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-the-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save the Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
       
     </span>
   </a>
@@ -1103,49 +1147,59 @@
   
 
 
-<h1 id="setup-raspberry-pi-pico-2-micropython">Setup Raspberry Pi Pico 2 (MicroPython)</h1>
-<h2 id="hardware-list">Hardware List</h2>
-<ul>
-<li>A Raspberry Pi Pico 2 development board (Pico).</li>
-<li>A Computer (Desktop/Laptop/RPi)</li>
-<li>A Micro-USB cable.</li>
-</ul>
-<h2 id="install-micropython-firmware">Install MicroPython Firmware</h2>
-<p>Raspberry Pi Foundation has a very detailed and easy-to-follow guide allowing people to <a href="https://projects.raspberrypi.org/en/projects/getting-started-with-the-pico">get started using Pico</a>.</p>
-<ol>
-<li>
-<p>Install <a href="https://thonny.org/">Thonny</a> on the computer.
-    Open up a terminal and execute following command:</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bash<span class="w"> </span>&lt;<span class="o">(</span>wget<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://thonny.org/installer-for-linux<span class="o">)</span>
-</span></code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Go to <a href="https://thonny.org/">thonny.org</a> for installation guides on other OS.</p>
+<h1 id="set-up-homer_navigation-package">Set Up <code>homer_navigation</code> Package</h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended setting up this package on the server computer for a fluent experience of SLAM and navigation.
+Setting it up on the RPi may increase the burden, but should be OK to run.</p>
 </div>
-</li>
-<li>
-<p>Install <code>rshell</code> if you prefer CLI for managing MicroPython scripts.</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">sudo apt install python3-pip</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">pip install rshell --break-system-packages</span>
+<h2 id="create-a-workspace-if-not-created-one-yet">Create a Workspace (if not created one yet)</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/homer_ws/src
 </span></code></pre></div>
+<h2 id="install-homer_navigation-package">Install <code>homer_navigation</code> Package</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>~/homer_ws/src
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/linzhanguca/homer_navigation.git
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span>~/homer_ws
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>colcon<span class="w"> </span>build
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">source</span><span class="w"> </span>install/local_setup.bash
+</span></code></pre></div>
+<h2 id="create-a-map">Create a Map</h2>
+<ol>
+<li>Open a terminal on <strong>RPi</strong>, launch <code>homer_interface</code> and related resources</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>homer_bringup<span class="w"> </span>homer.launch.py
+</span></code></pre></div>
+<ol>
+<li>
+<p>Open a terminal on the <strong>server</strong>, launch <code>slam_toolbox</code> and related resources.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>homer_navigation<span class="w"> </span>create_map.launch.py
+</span></code></pre></div></p>
 </li>
 <li>
-<p>(First time) Install MicroPython firmware from Thonny</p>
-<ol>
-<li>Click the bottom right corner of Thonny (where shows "Local Python 3"), then select "Install MicroPython"</li>
-<li>In the pop-out window, make sure the "Target volume" is automatically recognized and the "Target model" is set to "Raspberry Pi RP2350" or similar.</li>
-<li>Select "RP2" as the "MicroPython family", "Raspberry Pi Pico 2" as the "variant", "1.27.0" as the "version".</li>
-</ol>
-<p>Click "Install" button to add MicroPython firmware to your Pico board.</p>
+<p>(Optional) Open a terminal either on the server or RPi, start <code>teleop_twist_keyboard</code> to drive the robot around and create the map.</p>
 </li>
 </ol>
-<h2 id="nuke-pico-factory-reset">Nuke Pico ("Factory Reset")</h2>
-<p>In case of the Pico gets frozen or is doing anything unexpected.
-You may want to nuke the Pico board (clear the Flash memory).</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard
+</span></code></pre></div>
+<h2 id="save-the-map">Save the Map</h2>
+<blockquote>
+<p>Using slam_toolbox plugin</p>
+</blockquote>
+<h2 id="navigation">Navigation</h2>
 <ol>
-<li>Download the <a href="https://datasheets.raspberrypi.com/soft/flash_nuke.uf2"><code>flash_nuke.uf2</code></a> file (If downloaded a <code>.zip</code> file, unzip to extract the <code>.uf2</code> file.).</li>
-<li>Hold the white button on the Pico board while plug the Pico into the computer until the Pico is recognized as a external storage device.</li>
-<li>Drag and drop (copy and paste) the <code>flash_nuke.uf2</code> file to the external storage device.</li>
+<li>Open a terminal on <strong>RPi</strong>, launch <code>homer_interface</code> and related resources</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>homer_bringup<span class="w"> </span>homer.launch.py
+</span></code></pre></div>
+<ol>
+<li>
+<p>Open a terminal on the <strong>server</strong>, launch <code>slam_toolbox</code> and related resources.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>homer_navigation<span class="w"> </span>navigation.launch.py
+</span></code></pre></div></p>
+</li>
+<li>
+<p>In Rviz, use "2D Goal Pose" button to set desired ending pose.</p>
+</li>
 </ol>
 
 
