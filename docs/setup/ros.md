@@ -86,10 +86,6 @@ source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash  # autocomplet
 export _colcon_cd_root=/opt/ros/jazzy/  # specify ros2 root dir
 ```
 
-!!! note
-    `ROS_DOMAIN_ID` can be set to any number between 0 and 232.
-    See the following section for more details.
-
 ???+ tip "User Configuration Script"
     In Ubuntu (and many Linux distros), a shell configuration file is saved at `$HOME/.bashrc`.
     The commands stored in this file will be executed every time the user started a terminal session.
