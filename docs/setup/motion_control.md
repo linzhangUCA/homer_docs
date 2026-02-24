@@ -43,6 +43,8 @@ Please follow the steps below to get the Pico ready for driving HomeR and sensin
     python3 tests/computer_messenger.py
     ```
     Both wheels will start to ramp the speed up and down then repeat with opposite direction.
+    !!! bug "Communication Failure"
+        In case the computer failed to spin the wheels, you may want to unplug the Pico and plug it back in.
 
 ## 2. Motion Control Scripts
 
