@@ -13,7 +13,7 @@ Please follow the steps below to get the Pico ready for driving HomeR and sensin
 - A Micro-USB cable.
 - (Optional) The relay PCB: [HomeR Thalamus](https://github.com/linzhangUCA/homer_ee)
 
-## 1. [`homer_pico`](https://github.com/linzhangUCA/homer_pico) Usage
+## 1. Set Up [`homer_pico`](https://github.com/linzhangUCA/homer_pico) on Pico
 
 1. Download and navigate to the repository.
 
@@ -35,8 +35,14 @@ Please follow the steps below to get the Pico ready for driving HomeR and sensin
     rshell -p /dev/ttyACM0 --buffer-size 512 cp upython_scripts/pico_messenger.py /pyboard/main.py
     ```
 
-    !!! tip
+    !!! note
         A hard reset (unplug Pico then plug it back) is required to activate `main.py`.
+
+4. Verify communication
+    ```console
+    python3 tests/computer_messenger.py
+    ```
+    Both wheels will start to ramp the speed up and down then repeat with opposite direction.
 
 ## 2. Motion Control Scripts
 
