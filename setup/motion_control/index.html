@@ -720,6 +720,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../homer_bringup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set Up homer_bringup Package on Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../homer_pack/" class="md-nav__link">
         
   
@@ -819,10 +847,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-homer_pico-usage" class="md-nav__link">
+  <a href="#1-set-up-homer_pico-on-pico" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. homer_pico Usage
+        1. Set Up homer_pico on Pico
       
     </span>
   </a>
@@ -1067,10 +1095,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-homer_pico-usage" class="md-nav__link">
+  <a href="#1-set-up-homer_pico-on-pico" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. homer_pico Usage
+        1. Set Up homer_pico on Pico
       
     </span>
   </a>
@@ -1183,7 +1211,7 @@ Please follow the steps below to get the Pico ready for driving HomeR and sensin
 <li>A Micro-USB cable.</li>
 <li>(Optional) The relay PCB: <a href="https://github.com/linzhangUCA/homer_ee">HomeR Thalamus</a></li>
 </ul>
-<h2 id="1-homer_pico-usage">1. <a href="https://github.com/linzhangUCA/homer_pico"><code>homer_pico</code></a> Usage</h2>
+<h2 id="1-set-up-homer_pico-on-pico">1. Set Up <a href="https://github.com/linzhangUCA/homer_pico"><code>homer_pico</code></a> on Pico</h2>
 <ol>
 <li>
 <p>Download and navigate to the repository.</p>
@@ -1201,10 +1229,18 @@ Please follow the steps below to get the Pico ready for driving HomeR and sensin
 <p>Set up automatic communication using <a href="./upython_scripts/pico_messenger.py"><code>pico_messenger.py</code></a>.</p>
 <div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">rshell -p /dev/ttyACM0 --buffer-size 512 cp upython_scripts/pico_messenger.py /pyboard/main.py</span>
 </span></code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>A hard reset (unplug Pico then plug it back) is required to activate <code>main.py</code>.</p>
 </div>
+</li>
+<li>
+<p>Verify communication
+    <div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">python3 tests/computer_messenger.py</span>
+</span></code></pre></div>
+    Both wheels will start to ramp the speed up and down then repeat with opposite direction.
+    !!! bug "Communication Failure"
+        In case the computer failed to spin the wheels, you may want to unplug the Pico and plug it back in.</p>
 </li>
 </ol>
 <h2 id="2-motion-control-scripts">2. Motion Control Scripts</h2>
