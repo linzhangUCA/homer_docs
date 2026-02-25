@@ -9,3 +9,4 @@ The following guides will help you set up the HomeR by means of hardware and sof
 - [Set up Raspberry Pi](rpi.md)
 - [Set up ROS Enviroment](ros.md)
 - [Set up `homer_bringup` package](homer_bringup.md)
+- [Set up `homer_navigation` package](homer_nav.md)
