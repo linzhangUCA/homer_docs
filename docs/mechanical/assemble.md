@@ -1,10 +1,11 @@
-# Assembly Guide
+# Assembling Guide
 
 ![components_overview](assets/images/components_overview.jpg)
 
 ## 1 Wheel Assembly
 
 ### 1.1 Preparation
+
 - 1x motor holder (3d printable)
 - 1x 25mm diameter DC motor
 - 2x M3x10mm screw
@@ -15,6 +16,7 @@
 ![pre_wheel](assets/images/assemble/pre_wheel.png)
 
 ### 1.2 Post Assemble
+
 !!! warning "Motor Wires"
     Make sure motor wires sticking out from the same side as the flat surface of the motor holder
 
@@ -22,10 +24,10 @@
 
 You will need to assemble 2 wheels.
 
-
 ## 2 Base Assembly
 
 ### 2.1 Preparation
+
 - 1x base (3d printable)
 - 1x caster wheel (3d printable)
 - 2x wheel assembly
@@ -39,7 +41,6 @@ You will need to assemble 2 wheels.
 
 ### 2.2 Post Assemble
 
-
 ![post_base-bot](assets/images/assemble/post_base-bot.png)
 
 !!! tip "Bottom View"
@@ -51,6 +52,7 @@ You will need to assemble 2 wheels.
 ## 3 Electronics Stack
 
 ### 3.1 Preparation
+
 - 1x Power expansion board
 - 1x Raspberry Pi 5
 - 1x HomeR Thalamus board (relay)
@@ -98,6 +100,7 @@ You will need to assemble 2 wheels.
 ![thalamus_stack](assets/images/assemble/thalamus_stack.png)
 
 #### 3.2.5 Finish differential drive mobile base (electronics stacking)
+
 Plug in cables and wires.
 
 ![post_electronics](assets/images/assemble/post_electronics.png)
