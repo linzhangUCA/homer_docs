@@ -6,6 +6,7 @@ The following guides will help you set up the HomeR by means of software.
 - [Upload and test the motion controller](motion_control.md)
 - [Set up Ubuntu Server](server.md)
 - [Set up Raspberry Pi](rpi.md)
+- [Connect and use a bluetooth gamepad](gamepad.md)
 - [Set up ROS 2 enviroment](ros.md)
 - [Install and use `homer_bringup` package](homer_bringup.md)
 - [Install and use `homer_navigation` package](homer_nav.md)
