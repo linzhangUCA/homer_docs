@@ -25,7 +25,7 @@
     
     
       
-        <title>Set Up homer_bringup Package on Raspberry Pi - HomeR Docs</title>
+        <title>Install and use homer_bringup package on Raspberry Pi - HomeR Docs</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#set-up-homer_bringup-package-on-raspberry-pi" class="md-skip">
+        <a href="#install-and-use-homer_bringup-package-on-raspberry-pi" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Set Up homer_bringup Package on Raspberry Pi
+              Install and use homer_bringup package on Raspberry Pi
             
           </span>
         </div>
@@ -264,7 +264,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../mechanical/assembly/" class="md-tabs__link">
+        <a href="../../mechanical/assemble/" class="md-tabs__link">
           
   
   
@@ -516,14 +516,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mechanical/assembly/" class="md-nav__link">
+      <a href="../../mechanical/assemble/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Assembly Guide
+    Assembling Guide
   
 
     
@@ -671,7 +671,7 @@
   <span class="md-ellipsis">
     
   
-    Setup Guides
+    Software Setup Guides
   
 
     
@@ -736,7 +736,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up homer_bringup Package on Raspberry Pi
+    Install and use homer_bringup package on Raspberry Pi
   
 
     
@@ -754,7 +754,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up homer_bringup Package on Raspberry Pi
+    Install and use homer_bringup package on Raspberry Pi
   
 
     
@@ -836,34 +836,6 @@
     
   
     Set Up homer_navigation Package (On Server)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../homer_pack/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Set up HomeR Packages
   
 
     
@@ -1103,31 +1075,29 @@
   
 
 
-<h1 id="set-up-homer_bringup-package-on-raspberry-pi">Set Up <code>homer_bringup</code> Package on Raspberry Pi</h1>
+<h1 id="install-and-use-homer_bringup-package-on-raspberry-pi">Install and use <code>homer_bringup</code> package on Raspberry Pi</h1>
 <p><a href="https://github.com/linzhanguca/homer_bringup"><code>homer_bringup</code></a> is a ROS 2 package for interfacing HomeR's hardware.</p>
 <ul>
 <li>
 <p><a href="https://github.com/linzhanguca/homer_bringup"><code>homer_bringup</code></a> is featured the <a href="https://github.com/linzhangUCA/homer_bringup/blob/main/homer_bringup/homer_interface.py"><code>homer_interface</code></a> node.
 The node does the following jobs.</p>
-<ul>
-<li>Sets up the communication between RPi and Pico.</li>
+</li>
+<li>
+<p>Sets up the communication between RPi and Pico.</p>
+</li>
 <li>Subscribes to the <code>/cmd_vel</code> topic and transfer the <code>linear.x</code> and <code>angular.z</code> values to Pico as the reference velocity for HomeR.</li>
 <li>Publishes HomeR's motion status using <a href="https://docs.ros2.org/foxy/api/nav_msgs/msg/Odometry.html"><code>Odometry</code></a> message under the <code>/odom</code> topic.</li>
 <li>Broadcasts dynamic transformations between the body frame: <code>base_link</code> and the global frame: <code>odom</code>.</li>
-</ul>
-</li>
 </ul>
 <p>The ROS functionalities of such a node is illustrated as the graph showing below.</p>
 <p><img alt="homer_interface_node" src="../assets/images/homer_bringup/homer_interface.png" /></p>
 <ul>
 <li><a href="https://github.com/linzhanguca/homer_bringup"><code>homer_bringup</code></a> provides <a href="https://github.com/linzhangUCA/homer_bringup/blob/main/launch/homer.launch.py"><code>homer.launch.py</code></a> for the convenience to launch a collection of useful nodes and frame transformations alongside the <code>homer_interface</code> node.
-The launch file's duties are listed below.<ul>
+The launch file's duties are listed below.</li>
 <li>A <code>teleop_twist_joy_node</code> from the <a href="https://index.ros.org/p/teleop_twist_joy/#jazzy"><code>teleop_twist_joy</code></a> package, which publishes the <code>/cmd_vel</code> topic.</li>
 <li>A customized <code>rplidar_composition</code> node (from <a href="https://index.ros.org/p/rplidar_ros/#jazzy"><code>rplidar_ros</code></a> package) publishing the <code>/scan</code> topic.</li>
 <li>A static transformation between <code>base_link</code> frame and <code>lidar_link</code> frame (will be used for SLAM later).</li>
 <li>A static transformation between the <code>base_link</code> frame and <code>base_footprint</code> frame (will be used for navigation later).</li>
-</ul>
-</li>
 </ul>
 <p>The launch file will construct a more complex system as the graph showing below.</p>
 <p><img alt="homer_launch_nodes" src="../assets/images/homer_bringup/homer_launch.png" /></p>
@@ -1147,17 +1117,15 @@ The launch file's duties are listed below.<ul>
 </div>
 <h2 id="usage">Usage</h2>
 <ul>
-<li>
-<p>To only start the <code>homer_interface</code> node:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>homer_bringup<span class="w"> </span>homer_interface
-</span></code></pre></div></p>
-</li>
-<li>
-<p>To launch a collection of nodes
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>homer_bringup<span class="w"> </span>homer.launch.py
-</span></code></pre></div></p>
-</li>
+<li>To only start the <code>homer_interface</code> node:</li>
 </ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>homer_bringup<span class="w"> </span>homer_interface
+</span></code></pre></div>
+<ul>
+<li>To launch a collection of nodes</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>homer_bringup<span class="w"> </span>homer.launch.py
+</span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can start driving HomeR using a gamepad if using <code>ros2 launch ...</code> command.</p>
@@ -1165,9 +1133,9 @@ The launch file's duties are listed below.<ul>
 <ul>
 <li>Test drive with keyboard</li>
 </ul>
-<p>Open a separate terminal window (can be one on the server):
+<p>Open a separate terminal window (can be one on the server):</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard
-</span></code></pre></div></p>
+</span></code></pre></div>
 
 
 
