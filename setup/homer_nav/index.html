@@ -1104,12 +1104,12 @@
 Setting it up on the RPi should be OK, but the Pi will be struggling.</p>
 </div>
 <h2 id="install-homer_navigation-package">Install <code>homer_navigation</code> Package</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/homer_ws/src<span class="w">  </span><span class="c1"># create a workspace</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>~/homer_ws/src<span class="w">  </span><span class="c1"># navigate into src/ under the workspace</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/linzhanguca/homer_navigation.git<span class="w">  </span><span class="c1"># download package</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">cd</span><span class="w"> </span>~/homer_ws<span class="w">  </span><span class="c1"># navigate to workspace root</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>colcon<span class="w"> </span>build<span class="w">  </span><span class="c1"># build all packages in workspace</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">source</span><span class="w"> </span>install/local_setup.bash<span class="w">  </span><span class="c1"># register package related resources</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">mkdir -p ~/homer_ws/src  # create a workspace</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">cd ~/homer_ws/src  # navigate into src/ under the workspace</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">git clone https://github.com/linzhanguca/homer_navigation.git  # download package</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">cd ~/homer_ws  # navigate to workspace root</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">colcon build  # build all packages in workspace</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="go">source install/local_setup.bash  # register package related resources</span>
 </span></code></pre></div>
 <h2 id="create-a-map">Create a Map</h2>
 <ol>
@@ -1168,13 +1168,24 @@ One is <code>&lt;map_name&gt;.data</code>, and the other one is <code>&lt;map_na
 <h2 id="navigation">Navigation</h2>
 <ol>
 <li>
-<p>Open a terminal on <strong>RPi</strong>, launch <code>homer_interface</code> and <code>rplidar_composition</code>
-  <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>homer_bringup<span class="w"> </span>homer.launch.py
+<p>Open localization configuration file <code>$HOME/homer_ws/src/homer_navigation/configs/localization_params.yaml</code>, and edit <code>map_file_name</code> around line 18. 
+Use the map name you've saved in the previous steps, for example:
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">  </span><span class="nt">map_file_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/tmp/test_map</span>
+</span></code></pre></div>
+Rebuild the navigation package with the specified map files.
+<div class="language-console highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">cd ~/homer_ws/</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="go">colcon build</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">source install/local_setup.bash</span>
 </span></code></pre></div></p>
 </li>
 <li>
-<p>Open a terminal on <strong>Server</strong>, launch <code>slam_toolbox</code> under the "localization" mode and a collection of <code>nav2</code> nodes.
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>homer_navigation<span class="w"> </span>navigation.launch.py
+<p>On <strong>RPi</strong>, launch <code>homer_interface</code> and <code>rplidar_composition</code>
+  <div class="language-console highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">ros2 launch homer_bringup homer.launch.py</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>On <strong>Server</strong>, launch <code>slam_toolbox</code> under the "localization" mode and a collection of <code>nav2</code> nodes.
+<div class="language-console highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="go">ros2 launch homer_navigation navigation.launch.py</span>
 </span></code></pre></div></p>
 </li>
 <li>
