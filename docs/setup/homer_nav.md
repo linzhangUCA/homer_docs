@@ -6,7 +6,7 @@
 
 ## Install `homer_navigation` Package
 
-```bash
+```console
 mkdir -p ~/homer_ws/src  # create a workspace
 cd ~/homer_ws/src  # navigate into src/ under the workspace
 git clone https://github.com/linzhanguca/homer_navigation.git  # download package
@@ -63,13 +63,25 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 
 ## Navigation
-1. Open a terminal on **RPi**, launch `homer_interface` and `rplidar_composition`
-  ```bash
+1. Open localization configuration file `$HOME/homer_ws/src/homer_navigation/configs/localization_params.yaml`, and edit `map_file_name` around line 18. 
+Use the map name you've saved in the previous steps, for example:
+```yaml
+  map_file_name: /tmp/test_map
+```
+Rebuild the navigation package with the specified map files.
+```console
+cd ~/homer_ws/
+colcon build
+source install/local_setup.bash
+```
+
+2. On **RPi**, launch `homer_interface` and `rplidar_composition`
+  ```console
   ros2 launch homer_bringup homer.launch.py
   ```
 
-2. Open a terminal on **Server**, launch `slam_toolbox` under the "localization" mode and a collection of `nav2` nodes.
-```bash
+3. On **Server**, launch `slam_toolbox` under the "localization" mode and a collection of `nav2` nodes.
+```console
 ros2 launch homer_navigation navigation.launch.py
 ```
 
