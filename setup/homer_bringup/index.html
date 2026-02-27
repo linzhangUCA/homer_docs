@@ -780,17 +780,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-workspace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create a Workspace
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#install-homer_bringup-package" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -809,6 +798,45 @@
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debriefing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debriefing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debriefing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#homer_interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        homer_interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homerlaunchpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        homer.launch.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -835,7 +863,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up homer_navigation Package (On Server)
+    Install and use homer_navigation package (On Server)
   
 
     
@@ -1023,17 +1051,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-workspace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create a Workspace
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#install-homer_bringup-package" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1052,6 +1069,45 @@
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debriefing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debriefing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debriefing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#homer_interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        homer_interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homerlaunchpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        homer.launch.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1077,39 +1133,17 @@
 
 <h1 id="install-and-use-homer_bringup-package-on-raspberry-pi">Install and use <code>homer_bringup</code> package on Raspberry Pi</h1>
 <p><a href="https://github.com/linzhanguca/homer_bringup"><code>homer_bringup</code></a> is a ROS 2 package for interfacing HomeR's hardware.</p>
-<ul>
-<li>
-<p><a href="https://github.com/linzhanguca/homer_bringup"><code>homer_bringup</code></a> is featured the <a href="https://github.com/linzhangUCA/homer_bringup/blob/main/homer_bringup/homer_interface.py"><code>homer_interface</code></a> node.
-The node does the following jobs.</p>
-</li>
-<li>
-<p>Sets up the communication between RPi and Pico.</p>
-</li>
-<li>Subscribes to the <code>/cmd_vel</code> topic and transfer the <code>linear.x</code> and <code>angular.z</code> values to Pico as the reference velocity for HomeR.</li>
-<li>Publishes HomeR's motion status using <a href="https://docs.ros2.org/foxy/api/nav_msgs/msg/Odometry.html"><code>Odometry</code></a> message under the <code>/odom</code> topic.</li>
-<li>Broadcasts dynamic transformations between the body frame: <code>base_link</code> and the global frame: <code>odom</code>.</li>
-</ul>
-<p>The ROS functionalities of such a node is illustrated as the graph showing below.</p>
-<p><img alt="homer_interface_node" src="../assets/images/homer_bringup/homer_interface.png" /></p>
-<ul>
-<li><a href="https://github.com/linzhanguca/homer_bringup"><code>homer_bringup</code></a> provides <a href="https://github.com/linzhangUCA/homer_bringup/blob/main/launch/homer.launch.py"><code>homer.launch.py</code></a> for the convenience to launch a collection of useful nodes and frame transformations alongside the <code>homer_interface</code> node.
-The launch file's duties are listed below.</li>
-<li>A <code>teleop_twist_joy_node</code> from the <a href="https://index.ros.org/p/teleop_twist_joy/#jazzy"><code>teleop_twist_joy</code></a> package, which publishes the <code>/cmd_vel</code> topic.</li>
-<li>A customized <code>rplidar_composition</code> node (from <a href="https://index.ros.org/p/rplidar_ros/#jazzy"><code>rplidar_ros</code></a> package) publishing the <code>/scan</code> topic.</li>
-<li>A static transformation between <code>base_link</code> frame and <code>lidar_link</code> frame (will be used for SLAM later).</li>
-<li>A static transformation between the <code>base_link</code> frame and <code>base_footprint</code> frame (will be used for navigation later).</li>
-</ul>
-<p>The launch file will construct a more complex system as the graph showing below.</p>
-<p><img alt="homer_launch_nodes" src="../assets/images/homer_bringup/homer_launch.png" /></p>
-<h2 id="create-a-workspace">Create a Workspace</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/homer_ws/src
-</span></code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Setting up this package on <strong>RPi</strong> only.</p>
+</div>
 <h2 id="install-homer_bringup-package">Install <code>homer_bringup</code> Package</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>~/homer_ws/src
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/linzhanguca/homer_bringup.git
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span>~/homer_ws
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>colcon<span class="w"> </span>build
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">source</span><span class="w"> </span>install/local_setup.bash
+<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">mkdir -p ~/homer_ws/src  # create a workspace</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">cd ~/homer_ws/src  # navigate into `src/` under the workspace</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">git clone https://github.com/linzhanguca/homer_bringup.git  # download package</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">cd ~/homer_ws  # navigate to workspace root</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">colcon build  # build all packages in workspace</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="go">source install/local_setup.bash  # register package related resources</span>
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1119,12 +1153,12 @@ The launch file's duties are listed below.</li>
 <ul>
 <li>To only start the <code>homer_interface</code> node:</li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>homer_bringup<span class="w"> </span>homer_interface
+<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">ros2 run homer_bringup homer_interface</span>
 </span></code></pre></div>
 <ul>
 <li>To launch a collection of nodes</li>
 </ul>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>homer_bringup<span class="w"> </span>homer.launch.py
+<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">ros2 launch homer_bringup homer.launch.py</span>
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1134,8 +1168,31 @@ The launch file's duties are listed below.</li>
 <li>Test drive with keyboard</li>
 </ul>
 <p>Open a separate terminal window (can be one on the server):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard
+<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">ros2 run teleop_twist_keyboard teleop_twist_keyboard</span>
 </span></code></pre></div>
+<h2 id="debriefing">Debriefing</h2>
+<h3 id="homer_interface"><code>homer_interface</code></h3>
+<p><a href="https://github.com/linzhanguca/homer_bringup"><code>homer_bringup</code></a> package is featured the <a href="https://github.com/linzhangUCA/homer_bringup/blob/main/homer_bringup/homer_interface.py"><code>homer_interface</code></a> node which bridges the gap between the motion control and ROS management.
+It does the following jobs.</p>
+<ul>
+<li>Sets up the communication between RPi and Pico.</li>
+<li>Subscribes to the <code>/cmd_vel</code> topic and transfer the <code>linear.x</code> and <code>angular.z</code> values to Pico as the reference velocity for HomeR.</li>
+<li>Publishes HomeR's motion status using <a href="https://docs.ros2.org/foxy/api/nav_msgs/msg/Odometry.html"><code>Odometry</code></a> message under the <code>/odom</code> topic.</li>
+<li>Broadcasts dynamic transformations between the body frame: <code>base_link</code> and the global frame: <code>odom</code>.</li>
+</ul>
+<p>The duties of <code>homer_interface</code> node can be illustrated by the following graph</p>
+<p><img alt="homer_interface_node" src="../assets/images/homer_bringup/homer_interface.png" /></p>
+<h3 id="homerlaunchpy"><code>homer.launch.py</code></h3>
+<p><a href="https://github.com/linzhanguca/homer_bringup"><code>homer_bringup</code></a> provides <a href="https://github.com/linzhangUCA/homer_bringup/blob/main/launch/homer.launch.py"><code>homer.launch.py</code></a> for the convenience to launch a collection of useful nodes and frame transformations alongside the <code>homer_interface</code> node.
+The launch file's duties are listed below.</p>
+<ul>
+<li>A <code>teleop_twist_joy_node</code> from the <a href="https://index.ros.org/p/teleop_twist_joy/#jazzy"><code>teleop_twist_joy</code></a> package, which publishes the <code>/cmd_vel</code> topic.</li>
+<li>A customized <code>rplidar_composition</code> node (from <a href="https://index.ros.org/p/rplidar_ros/#jazzy"><code>rplidar_ros</code></a> package) publishing the <code>/scan</code> topic.</li>
+<li>A static transformation between <code>base_link</code> frame and <code>lidar_link</code> frame (will be used for SLAM later).</li>
+<li>A static transformation between the <code>base_link</code> frame and <code>base_footprint</code> frame (will be used for navigation later).</li>
+</ul>
+<p>The launch file will construct a more complex system as the graph showing below.</p>
+<p><img alt="homer_launch_nodes" src="../assets/images/homer_bringup/homer_launch.png" /></p>
 
 
 
