@@ -1,4 +1,4 @@
-# Motion Controller
+# Upload motion control scripts
 
 The HomeR's motion control is relying on a series of MicroPython scripts running on the Pico board.
 Please follow the steps below to get the Pico ready for driving HomeR and sensing its motion status.

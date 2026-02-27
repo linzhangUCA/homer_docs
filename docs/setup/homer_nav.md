@@ -12,7 +12,8 @@ cd ~/homer_ws/src  # navigate into src/ under the workspace
 git clone https://github.com/linzhanguca/homer_navigation.git  # download package
 cd ~/homer_ws  # navigate to workspace root
 colcon build  # build all packages in workspace
-source install/local_setup.bash  # register package related resources
+echo "source ~/homer_ws/install/local_setup.bash" >> ~/.bashrc  # register package related resources
+source ~/.bashrc
 ```
 
 ## Create a Map
