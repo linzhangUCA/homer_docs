@@ -29,7 +29,7 @@ Please follow the steps below to get the Pico ready for driving HomeR and sensin
     rshell -p /dev/ttyACM0 --buffer-size 512 cp -r upython_scripts/drivetrain /pyboard/
     ```
 
-3. Set up automatic communication using [`pico_messenger.py`](./upython_scripts/pico_messenger.py).
+3. Set up automatic communication using [`pico_messenger.py`](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/pico_messenger.py).
 
     ```console
     rshell -p /dev/ttyACM0 --buffer-size 512 cp upython_scripts/pico_messenger.py /pyboard/main.py

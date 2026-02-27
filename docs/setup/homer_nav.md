@@ -1,4 +1,4 @@
-# Set Up `homer_navigation` Package (On Server)
+# Install and use `homer_navigation` package (On Server)
 
 !!! note
     Setting up this package on the server computer is highly recommended for a fluent experience of SLAM and navigation.
