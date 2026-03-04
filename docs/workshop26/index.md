@@ -4,4 +4,5 @@
 - [Upload motion control scripts](../setup/motion_control.md)
 - [Install and use `homer_bringup` package](../setup/homer_bringup.md)
 - [Install and use `homer_navigation` package](../setup/homer_nav.md)
+- [Slides](./assets/uca_nav.pdf)
 
