@@ -42,10 +42,10 @@ sudo dpkg -i /tmp/ros2-apt-source.deb
 sudo apt update && sudo apt install ros-dev-tools -y
 
 # Install ROS 2
-sudo apt install ros-jazzy-desktop -y
+sudo apt install -y ros-jazzy-desktop ros-jazzy-rmw-cyclonedds-cpp
 ```
 
-## 2. Verify ROS 2 Installation
+### Verify ROS 2 Installation
 
 This step verifies if ROS 2's communication, C++ and Python API are working correctly.
 ???+ tip
@@ -68,15 +68,9 @@ ros2 run demo_nodes_py listener
 ???+ tip
     Hold `Ctrl` then press `c` on the keyboard will terminate the executing program.
 
-## 3. ROS 2 Environment Setup
+## 2. ROS 2 Environment Setup
 
-- Install CycloneDDS (from terminal).
-
-```sh
-sudo apt install ros-jazzy-rmw-cyclonedds-cpp
-```
-
-Edit `$HOME/bashrc` file and add following to (the bottom of) the file.
+Edit `$HOME/.bashrc` file and add following to (the bottom of) the file.
 
 ``` sh
 source /opt/ros/jazzy/setup.bash  # activate ros2
@@ -92,21 +86,20 @@ export _colcon_cd_root=/opt/ros/jazzy/  # specify ros2 root dir
 
 ### Quick Explanation
 
-1. Add `source /opt/ros/jazzy/setup.bash` to `$HOME/.bashrc` file will automatically activate `ros2` command.
-Or, we need to manually activate it every time a new terminal started, which is very inconvenient.
+1. `source /opt/ros/jazzy/setup.bash` will automatically activate `ros2` command.
+> Or, we need to manually activate it every time a new terminal started, which is very inconvenient.
 
-2. To ensure nodes running on different devices can communicate with each other, we need to designate a domain ID to these devices.
-Append `export ROS_DOMAIN_ID=<id_number>` to `$HOME/.bashrc` file, where `<id_number>` should be within the range between 0 to 232.
+2. `export ROS_DOMAIN_ID=<id_number>` designates a ROS domain ID number for the current device. 
+To ensure nodes running on different devices can communicate with each other, all the devices should set ROS domain IDs to this number.
+The `<id_number>` should be within the range between 0 to 232.
 For more details, please read the official guide [about domain ID](https://docs.ros.org/en/jazzy/Concepts/Intermediate/About-Domain-ID.html).
 
-3. ROS 2 is using Data Distribution System (DDS) for communication management.
-The default FastDDS is OK, but not the ideal one for working with the navigation.
-We found Eclipse CycloneDDS is a good alternative, so we install it by:
-`sudo apt install ros-jazzy-rmw-cyclonedds-cpp`.
-Then enable it by appending `export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp` to the `$HOME/.bashrc` file.
+3. `export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp` will change Data Distribution System (DDS) of ROS 2 to Eclipse CycloneDDS.
+ROS 2 is using DDS for communication management.
+The default FastDDS is OK, but may not the ideal one for the navigation.
 
 4. [`colcon`](http://colcon.readthedocs.io/) is a command line tool to improve the workflow of building, testing and using multiple software packages.
-Add `source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash` to `$HOME/.bashrc` file will enable autocompletion function of `colcon`.
+`source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash` will enable CLI using autocompletion of `colcon`.
 
 5. We can quickly navigate around ROS 2 packages using the `colcon_cd` command.
-Set the system environment variable: `export _colcon_cd_root=/opt/ros/jazzy/` in `$HOME/.bashrc` will designate root directory of all ROS 2 packages.
+`export _colcon_cd_root=/opt/ros/jazzy/` will designate root directory of all ROS 2 packages to `/opt/ros/jazzy/.
