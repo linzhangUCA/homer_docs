@@ -8,7 +8,7 @@ Please refer to the [ROS Setup Guide](./ros.md).
 ### (Optional) Install [`slam_toolbox`](https://github.com/SteveMacenski/slam_toolbox) and [`Nav2`](https://docs.nav2.org/)
 
 ```bash
-sudo apt install ros-$ROS_DISTRO-navigation2 ros-$ROS_DISTRO-nav2-bringup
+sudo apt install ros-$ROS_DISTRO-slam-toolbox ros-$ROS_DISTRO-navigation2 ros-$ROS_DISTRO-nav2-bringup
 ```
 
 ## 3. Set up Raspberry Pi Camera
