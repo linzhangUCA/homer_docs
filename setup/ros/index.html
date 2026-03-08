@@ -920,29 +920,35 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-verify-ros-2-installation" class="md-nav__link">
+    <nav class="md-nav" aria-label="1. Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify-ros-2-installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Verify ROS 2 Installation
+        Verify ROS 2 Installation
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#3-ros-2-environment-setup" class="md-nav__link">
+  <a href="#2-ros-2-environment-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. ROS 2 Environment Setup
+        2. ROS 2 Environment Setup
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. ROS 2 Environment Setup">
+    <nav class="md-nav" aria-label="2. ROS 2 Environment Setup">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1155,29 +1161,35 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-verify-ros-2-installation" class="md-nav__link">
+    <nav class="md-nav" aria-label="1. Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify-ros-2-installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Verify ROS 2 Installation
+        Verify ROS 2 Installation
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#3-ros-2-environment-setup" class="md-nav__link">
+  <a href="#2-ros-2-environment-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. ROS 2 Environment Setup
+        2. ROS 2 Environment Setup
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. ROS 2 Environment Setup">
+    <nav class="md-nav" aria-label="2. ROS 2 Environment Setup">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1256,9 +1268,9 @@ Copy and paste them to your terminal window to install ROS 2</p>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-dev-tools<span class="w"> </span>-y
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="c1"># Install ROS 2</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-jazzy-desktop<span class="w"> </span>-y
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ros-jazzy-desktop<span class="w"> </span>ros-jazzy-rmw-cyclonedds-cpp
 </span></code></pre></div>
-<h2 id="2-verify-ros-2-installation">2. Verify ROS 2 Installation</h2>
+<h3 id="verify-ros-2-installation">Verify ROS 2 Installation</h3>
 <p>This step verifies if ROS 2's communication, C++ and Python API are working correctly.</p>
 <details class="tip" open="open">
 <summary>Tip</summary>
@@ -1276,18 +1288,13 @@ Copy and paste them to your terminal window to install ROS 2</p>
 <summary>Tip</summary>
 <p>Hold <code>Ctrl</code> then press <code>c</code> on the keyboard will terminate the executing program.</p>
 </details>
-<h2 id="3-ros-2-environment-setup">3. ROS 2 Environment Setup</h2>
-<ul>
-<li>Install CycloneDDS (from terminal).</li>
-</ul>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-jazzy-rmw-cyclonedds-cpp
-</span></code></pre></div>
-<p>Edit <code>$HOME/bashrc</code> file and add following to (the bottom of) the file.</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash<span class="w">  </span><span class="c1"># activate ros2</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_DOMAIN_ID</span><span class="o">=</span><span class="m">123</span><span class="w">  </span><span class="c1"># same on all devices, 0~232</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_cyclonedds_cpp<span class="w">  </span><span class="c1"># use cyclonedds</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">source</span><span class="w"> </span>/usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash<span class="w">  </span><span class="c1"># autocomplete colcon commands</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">_colcon_cd_root</span><span class="o">=</span>/opt/ros/jazzy/<span class="w">  </span><span class="c1"># specify ros2 root dir</span>
+<h2 id="2-ros-2-environment-setup">2. ROS 2 Environment Setup</h2>
+<p>Edit <code>$HOME/.bashrc</code> file and add following to (the bottom of) the file.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">source</span><span class="w"> </span>/opt/ros/jazzy/setup.bash<span class="w">  </span><span class="c1"># activate ros2</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_DOMAIN_ID</span><span class="o">=</span><span class="m">123</span><span class="w">  </span><span class="c1"># same on all devices, 0~232</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_cyclonedds_cpp<span class="w">  </span><span class="c1"># use cyclonedds</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">source</span><span class="w"> </span>/usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash<span class="w">  </span><span class="c1"># autocomplete colcon commands</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">_colcon_cd_root</span><span class="o">=</span>/opt/ros/jazzy/<span class="w">  </span><span class="c1"># specify ros2 root dir</span>
 </span></code></pre></div>
 <details class="tip" open="open">
 <summary>User Configuration Script</summary>
@@ -1297,28 +1304,29 @@ The commands stored in this file will be executed every time the user started a 
 <h3 id="quick-explanation">Quick Explanation</h3>
 <ol>
 <li>
-<p>Add <code>source /opt/ros/jazzy/setup.bash</code> to <code>$HOME/.bashrc</code> file will automatically activate <code>ros2</code> command.
-Or, we need to manually activate it every time a new terminal started, which is very inconvenient.</p>
+<p><code>source /opt/ros/jazzy/setup.bash</code> will automatically activate <code>ros2</code> command.</p>
+<blockquote>
+<p>Or, we need to manually activate it every time a new terminal started, which is very inconvenient.</p>
+</blockquote>
 </li>
 <li>
-<p>To ensure nodes running on different devices can communicate with each other, we need to designate a domain ID to these devices.
-Append <code>export ROS_DOMAIN_ID=&lt;id_number&gt;</code> to <code>$HOME/.bashrc</code> file, where <code>&lt;id_number&gt;</code> should be within the range between 0 to 232.
+<p><code>export ROS_DOMAIN_ID=&lt;id_number&gt;</code> designates a ROS domain ID number for the current device. 
+To ensure nodes running on different devices can communicate with each other, all the devices should set ROS domain IDs to this number.
+The <code>&lt;id_number&gt;</code> should be within the range between 0 to 232.
 For more details, please read the official guide <a href="https://docs.ros.org/en/jazzy/Concepts/Intermediate/About-Domain-ID.html">about domain ID</a>.</p>
 </li>
 <li>
-<p>ROS 2 is using Data Distribution System (DDS) for communication management.
-The default FastDDS is OK, but not the ideal one for working with the navigation.
-We found Eclipse CycloneDDS is a good alternative, so we install it by:
-<code>sudo apt install ros-jazzy-rmw-cyclonedds-cpp</code>.
-Then enable it by appending <code>export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp</code> to the <code>$HOME/.bashrc</code> file.</p>
+<p><code>export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp</code> will change Data Distribution System (DDS) of ROS 2 to Eclipse CycloneDDS.
+ROS 2 is using DDS for communication management.
+The default FastDDS is OK, but may not the ideal one for the navigation.</p>
 </li>
 <li>
 <p><a href="http://colcon.readthedocs.io/"><code>colcon</code></a> is a command line tool to improve the workflow of building, testing and using multiple software packages.
-Add <code>source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash</code> to <code>$HOME/.bashrc</code> file will enable autocompletion function of <code>colcon</code>.</p>
+<code>source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash</code> will enable CLI using autocompletion of <code>colcon</code>.</p>
 </li>
 <li>
 <p>We can quickly navigate around ROS 2 packages using the <code>colcon_cd</code> command.
-Set the system environment variable: <code>export _colcon_cd_root=/opt/ros/jazzy/</code> in <code>$HOME/.bashrc</code> will designate root directory of all ROS 2 packages.</p>
+<code>export _colcon_cd_root=/opt/ros/jazzy/</code> will designate root directory of all ROS 2 packages to `/opt/ros/jazzy/.</p>
 </li>
 </ol>
 
