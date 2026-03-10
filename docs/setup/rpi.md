@@ -33,7 +33,7 @@ sudo apt install -y python3-colcon-meson
 ### 3.2. Install ROS packages
 
 !!! tip
-It is handy to have `rosdep` set up before we install the ROS packages.
+    It is handy to have `rosdep` set up before we install the ROS packages.
 
 ```console
 sudo rosdep init
