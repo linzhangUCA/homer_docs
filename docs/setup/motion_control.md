@@ -13,26 +13,36 @@ Please follow the steps below to get the Pico ready for driving HomeR and sensin
 - A Micro-USB cable.
 - (Optional) The relay PCB: [HomeR Thalamus](https://github.com/linzhangUCA/homer_ee)
 
+## 0. Preparation
+Install dependencies and grant the user the permission to access Pico
+
+```sh
+sudo apt install python3-pip
+pip install rshell --break-system-packages
+sudo usermod -aG dialout $USER
+```
+
 ## 1. Set Up [`homer_pico`](https://github.com/linzhangUCA/homer_pico) on Pico
 
 1. Download and navigate to the repository.
 
-    ```console
-    cd ~  # use $HOME as an example
+    ```sh
+    cd ~  # navigate to $HOME directory
     git clone https://github.com/linzhanguca/homer_pico.git
     cd homer_pico
     ```
 
-2. Upload differential drive controller
+2. Upload differential drive control and motion monitor scripts
 
-    ```console
-    rshell -p /dev/ttyACM0 --buffer-size 512 cp -r upython_scripts/drivetrain /pyboard/
+    ```sh
+    rshell cp -r upython_scripts/drivetrain /pyboard/
+    rshell cp -r upython_scripts/perception /pyboard/
     ```
 
 3. Set up automatic communication using [`pico_messenger.py`](https://github.com/linzhangUCA/homer_pico/blob/main/upython_scripts/pico_messenger.py).
 
-    ```console
-    rshell -p /dev/ttyACM0 --buffer-size 512 cp upython_scripts/pico_messenger.py /pyboard/main.py
+    ```sh
+    rshell cp upython_scripts/pico_messenger.py /pyboard/main.py
     ```
 
     !!! note
@@ -46,7 +56,7 @@ Please follow the steps below to get the Pico ready for driving HomeR and sensin
     !!! bug "Communication Failure"
         In case the computer failed to spin the wheels, you may want to unplug the Pico and plug it back in.
 
-## 2. Motion Control Scripts
+## 2. Motion control scripts
 
 The HomeR's motion control is a modular design made up by the following scripts.
 It is highly recommended to test functionality of each module by the order.
@@ -86,3 +96,7 @@ The PID controller will assess the gap between the measured velocity and target 
 
 This scripts instantiates two `RegulatedWheel`s to construct the `DiffDriveController` class.
 It regulates individual wheel's velocity based on
+
+
+## 3. Motion sense scripts
+> Coming soon.
