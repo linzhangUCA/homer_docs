@@ -834,10 +834,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#homer_interface" class="md-nav__link">
+  <a href="#pico_interface" class="md-nav__link">
     <span class="md-ellipsis">
       
-        homer_interface
+        pico_interface
       
     </span>
   </a>
@@ -845,10 +845,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#homerlaunchpy" class="md-nav__link">
+  <a href="#homer_launchpy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        homer.launch.py
+        homer_launch.py
       
     </span>
   </a>
@@ -1192,10 +1192,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#homer_interface" class="md-nav__link">
+  <a href="#pico_interface" class="md-nav__link">
     <span class="md-ellipsis">
       
-        homer_interface
+        pico_interface
       
     </span>
   </a>
@@ -1203,10 +1203,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#homerlaunchpy" class="md-nav__link">
+  <a href="#homer_launchpy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        homer.launch.py
+        homer_launch.py
       
     </span>
   </a>
@@ -1245,28 +1245,29 @@
 <p>Setting up this package on <strong>RPi</strong> only.</p>
 </div>
 <h2 id="install-homer_bringup-package">Install <code>homer_bringup</code> Package</h2>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">mkdir -p ~/homer_ws/src  # create a workspace</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="go">cd ~/homer_ws/src  # navigate into `src/` under the workspace</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">git clone https://github.com/linzhanguca/homer_bringup.git  # download package</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="go">cd ~/homer_ws  # navigate to workspace root</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="go">colcon build  # build all packages in workspace</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="go">echo &quot;source ~/homer_ws/install/local_setup.bash&quot; &gt;&gt; ~/.bashrc  # register package related resources</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">source ~/.bashrc</span>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/homer_ws/src<span class="w">  </span><span class="c1"># create a workspace</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>~/homer_ws/src<span class="w">  </span><span class="c1"># navigate into `src/` under the workspace</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/linzhanguca/homer_bringup.git<span class="w">  </span><span class="c1"># download package</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">cd</span><span class="w"> </span>~/homer_ws<span class="w">  </span><span class="c1"># navigate to workspace root</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>rosdep<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--from-paths<span class="w"> </span>src<span class="w"> </span>--ignore-src<span class="w"> </span>--rosdistro<span class="w"> </span><span class="nv">$ROS_DISTRO</span><span class="w">  </span><span class="c1"># let `rosdep` install missing dependencies</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>colcon<span class="w"> </span>build<span class="w">  </span><span class="c1"># build all packages in workspace</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nb">source</span><span class="w"> </span>~/homer_ws/install/local_setup.bash<span class="w">  </span><span class="c1"># register all resources in the current workspace</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source ~/homer_ws/install/local_setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc<span class="w">  </span><span class="c1"># auto register</span>
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You may add <code>source ~/homer_ws/install/local_setup.bash</code> to the end of <code>~/.bashrc</code> file, so that the <code>homer_bringup</code> will be always available.</p>
+<p>adding <code>source ~/homer_ws/install/local_setup.bash</code> to the end of <code>~/.bashrc</code> file, so that the <code>homer_bringup</code> will be always available.</p>
 </div>
 <h2 id="usage">Usage</h2>
 <ul>
 <li>To only start the <code>homer_interface</code> node:</li>
 </ul>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">ros2 run homer_bringup homer_interface</span>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>homer_bringup<span class="w"> </span>pico_interface
 </span></code></pre></div>
 <ul>
 <li>To launch a collection of nodes</li>
 </ul>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">ros2 launch homer_bringup homer.launch.py</span>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2<span class="w"> </span>launch<span class="w"> </span>homer_bringup<span class="w"> </span>homer_launch.py
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1276,31 +1277,35 @@
 <li>Test drive with keyboard</li>
 </ul>
 <p>Open a separate terminal window (can be one on the server):</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">ros2 run teleop_twist_keyboard teleop_twist_keyboard</span>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2<span class="w"> </span>run<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard
 </span></code></pre></div>
 <h2 id="debriefing">Debriefing</h2>
-<h3 id="homer_interface"><code>homer_interface</code></h3>
-<p><a href="https://github.com/linzhanguca/homer_bringup"><code>homer_bringup</code></a> package is featured the <a href="https://github.com/linzhangUCA/homer_bringup/blob/main/homer_bringup/homer_interface.py"><code>homer_interface</code></a> node which bridges the gap between the motion control and ROS management.
+<h3 id="pico_interface"><code>pico_interface</code></h3>
+<p>The core of <a href="https://github.com/linzhanguca/homer_bringup"><code>homer_bringup</code></a> package is the <a href="https://github.com/linzhangUCA/homer_bringup/blob/main/homer_bringup/pico_interface.py"><code>pico_interface</code></a> node which bridges the gap between the motion control and ROS management.
 It does the following jobs.</p>
 <ul>
 <li>Sets up the communication between RPi and Pico.</li>
-<li>Subscribes to the <code>/cmd_vel</code> topic and transfer the <code>linear.x</code> and <code>angular.z</code> values to Pico as the reference velocity for HomeR.</li>
-<li>Publishes HomeR's motion status using <a href="https://docs.ros2.org/foxy/api/nav_msgs/msg/Odometry.html"><code>Odometry</code></a> message under the <code>/odom</code> topic.</li>
-<li>Broadcasts dynamic transformations between the body frame: <code>base_link</code> and the global frame: <code>odom</code>.</li>
+<li>Subscribes to the ROS topic: <code>/cmd_vel</code> and transmits <code>linear.x</code> and <code>angular.z</code> values to Pico as the reference/target linear and angular  velocity for HomeR.</li>
+<li>Receives HomeR's motion status including the estimated linear and angular velocity based on the encoder data, accelerometer data (acceleration on 3 axes) and gyroscope data (angular velocity on 3 axes).</li>
+<li>Constantly updates HomeR's pose using the encoder estimated linear and angular velocity.</li>
+<li>Publishes <a href="https://docs.ros2.org/foxy/api/nav_msgs/msg/Odometry.html"><code>Odometry</code></a> message under the <code>/homer/odom</code> topic, which contains the pose and velocity information.</li>
+<li>Publishes <a href="https://docs.ros2.org/foxy/api/sensor_msgs/msg/Imu.html"><code>Imu</code></a> message under the <code>/homer/imu</code> topic, which contains the data from the MPU6050 sensor.</li>
 </ul>
-<p>The duties of <code>homer_interface</code> node can be illustrated by the following graph</p>
-<p><img alt="homer_interface_node" src="../assets/images/homer_bringup/homer_interface.png" /></p>
-<h3 id="homerlaunchpy"><code>homer.launch.py</code></h3>
-<p><a href="https://github.com/linzhanguca/homer_bringup"><code>homer_bringup</code></a> provides <a href="https://github.com/linzhangUCA/homer_bringup/blob/main/launch/homer.launch.py"><code>homer.launch.py</code></a> for the convenience to launch a collection of useful nodes and frame transformations alongside the <code>homer_interface</code> node.
+<p>The duties of <code>pico_interface</code> node can be illustrated by the following graph</p>
+<p><img alt="pico_interface_node" src="../assets/images/homer_bringup/pico_interface.png" /></p>
+<h3 id="homer_launchpy"><code>homer_launch.py</code></h3>
+<p><a href="https://github.com/linzhanguca/homer_bringup"><code>homer_bringup</code></a> provides <a href="https://github.com/linzhangUCA/homer_bringup/blob/main/launch/homer_launch.py"><code>homer_launch.py</code></a> for the convenience to launch a collection of useful nodes and frame transformations alongside the <code>pico_interface</code> node.
 The launch file's duties are listed below.</p>
 <ul>
 <li>A <code>teleop_twist_joy_node</code> from the <a href="https://index.ros.org/p/teleop_twist_joy/#jazzy"><code>teleop_twist_joy</code></a> package, which publishes the <code>/cmd_vel</code> topic.</li>
 <li>A customized <code>rplidar_composition</code> node (from <a href="https://index.ros.org/p/rplidar_ros/#jazzy"><code>rplidar_ros</code></a> package) publishing the <code>/scan</code> topic.</li>
 <li>A static transformation between <code>base_link</code> frame and <code>lidar_link</code> frame (will be used for SLAM later).</li>
 <li>A static transformation between the <code>base_link</code> frame and <code>base_footprint</code> frame (will be used for navigation later).</li>
+<li>A static transformation between the <code>base_link</code> frame and <code>imu_link</code> frame.</li>
+<li>An Extended Kalman Filter node from <a href="https://github.com/cra-ros-pkg/robot_localization"><code>robot_localization</code></a> package to fuse the encoder data and the IMU data. This node spits out more accurate pose estimation and broadcast the transformations between the <code>odom</code> frame and the <code>base_link</code> frame.</li>
 </ul>
-<p>The launch file will construct a more complex system as the graph showing below.</p>
-<p><img alt="homer_launch_nodes" src="../assets/images/homer_bringup/homer_launch.png" /></p>
+<p>The launch file will construct a more complex system.
+Use <code>rqt_graph</code> command to view it.</p>
 
 
 
